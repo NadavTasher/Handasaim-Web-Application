@@ -1,0 +1,173 @@
+body {
+    background-color: #00649c;
+}
+
+html {
+    overflow-y: hidden;
+}
+
+/* Global Design */
+
+#glance {
+    min-width: 30vw;
+    max-width: 30vw;
+    width: 30vw;
+}
+
+#dashboard {
+    margin: 1vh;
+    padding: 1vh;
+    height: 18vh;
+    overflow: hidden;
+}
+
+#dashboard > * {
+    padding: 1vh;
+    margin: 1vh;
+}
+
+#message {
+    /* WebKit Mobile Scrolling */
+    -webkit-overflow-scrolling: touch;
+    align-content: normal;
+    align-items: normal;
+    align-self: stretch;
+    height: 100%;
+    width: 100%;
+    padding: 0 1vh;
+}
+
+#home {
+    justify-content: start;
+    direction: rtl;
+}
+
+#dashboard p {
+    color: #FFFFFF;
+}
+
+#schedule {
+    padding: 1vh;
+}
+
+#schedule p {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#grades {
+    /* WebKit Mobile Scrolling */
+    -webkit-overflow-scrolling: touch;
+    min-height: min-content;
+}
+
+#grades[mobile=true] {
+    overflow-x: scroll;
+    margin: 1vh;
+}
+
+#grades[mobile=false] {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+#grades::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+#grades, #subjects {
+    overflow-x: scroll;
+    justify-content: space-between;
+}
+
+#subjects {
+    /* WebKit Mobile Scrolling */
+    -webkit-overflow-scrolling: touch;
+    height: 60vh;
+    min-height: 60vh;
+    max-height: 70vh;
+    scroll-behavior: smooth;
+}
+
+#subjects[mobile=false] {
+    overflow-x: hidden;
+    /* Mozilla Hidden Scrolling */
+    overflow: -moz-scrollbars-none;
+    align-items: start;
+}
+
+#subjects::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+#glance>*{
+    padding: 0;
+    margin: 0.5vh;
+}
+
+#top {
+    font-size: 7vh;
+}
+
+#bottom{
+    font-size: 3vh;
+}
+
+#ui > img {
+    max-height: 4vh;
+    margin: 0 .5vh;
+    width: 100%;
+}
+
+/* Safari Add-to-home Prompt */
+
+#safari-prompt {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 1vh;
+    padding: 1vh;
+    height: 6vh;
+    background-color: #ffffffee;
+}
+
+#safari-prompt > * {
+    max-height: 6vh;
+}
+
+.padded {
+    padding: 1vh;
+    margin: 0.5vh;
+}
+
+.coasted {
+    background-color: #ddddee;
+    border-radius: 1vh;
+    border-color: transparent;
+}
+
+.minimal {
+    max-width: 7vh;
+    min-width: 7vh;
+    width: 7vh;
+    max-height: 7vh;
+    min-height: 7vh;
+    height: 7vh;
+}
+
+.maximal {
+    min-height: fit-content;
+}
+
+.maximal > p {
+    justify-content: start;
+    margin: 2vh !important;
+}
+
+.maximal > div > p {
+    width: 100%;
+}
