@@ -55,9 +55,9 @@ public class Schedule extends JSONObject {
             {"מעבדה", "מע'"}
     };
 
-    public Schedule(String filePath) throws Exception {
+    public Schedule(String path) throws Exception {
         // Initialize sheet
-        Sheet sheet = initializeSheet(filePath);
+        Sheet sheet = initializeSheet(path);
         // Check if sheet is null
         if (sheet != null) {
             // Initialize messages

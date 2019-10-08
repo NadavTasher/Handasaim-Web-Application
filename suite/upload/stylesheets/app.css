@@ -3,4 +3,10 @@ body {
     max-width: 460px;
 }
 
-/* App Style */
+#title{
+    font-size: 6vh;
+}
+
+#content{
+    font-size: 4vh;
+}

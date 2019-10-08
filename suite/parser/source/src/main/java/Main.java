@@ -12,8 +12,10 @@ public class Main {
     public static void main(String[] arguments) {
         if (arguments.length >= 2) {
             try {
-                Files.write(new File(arguments[1]).toPath(), new Schedule(arguments[0]).toString().getBytes());
+                String output = new Schedule(arguments[0]).toString();
+                Files.write(new File(arguments[1]).toPath(),output.getBytes());
             } catch (Exception ignored) {
+                ignored.printStackTrace();
             }
         }
     }

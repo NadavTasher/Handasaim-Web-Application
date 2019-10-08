@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d69e86-e339-4674-b21a-d401efb83368" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CONFIGURING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/files/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/files/schedule.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scheduler.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../parser.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/parser/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/parser/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../upload/files/authenticate/configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/files/authenticate/configuration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../upload/files/authenticate/sessions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/files/authenticate/sessions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../upload/scripts/backend/upload/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/scripts/backend/upload/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../upload/scripts/frontend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/scripts/frontend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../upload/stylesheets/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/stylesheets/app.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -110,6 +128,7 @@
     <session id="-2033590912">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -131,48 +150,27 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="34" />
-          <entry key="java" value="55" />
+          <entry key="java" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="34" />
-          <entry key="JAVA" value="55" />
+          <entry key="JAVA" value="141" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1123">
-              <caret line="740" column="69" selection-start-line="740" selection-start-column="69" selection-end-line="740" selection-end-column="69" />
+            <state relative-caret-position="90">
+              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/parser/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-879">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="126">
+              <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#error#0;class#Schedule#0" />
@@ -203,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#839#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -622,10 +620,10 @@
         <option value="$PROJECT_DIR$/src/main/java/appcore/components/Schedule.java" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parser/Schedule.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/parser/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -766,7 +764,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ScheduleSuiteParser [build]">
+  <component name="RunManager" selected="Gradle.ScheduleSuiteParser [fatJar]">
     <configuration name="ScheduleSuiteParser [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -810,8 +808,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ScheduleSuiteParser [build]" />
         <item itemvalue="Gradle.ScheduleSuiteParser [fatJar]" />
+        <item itemvalue="Gradle.ScheduleSuiteParser [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -834,7 +832,7 @@
       <workItem from="1567086620763" duration="1880000" />
       <workItem from="1567350904826" duration="4023000" />
       <workItem from="1570478231015" duration="3021000" />
-      <workItem from="1570527208832" duration="1399000" />
+      <workItem from="1570527208832" duration="4110000" />
     </task>
     <task id="LOCAL-00001" summary="General progress, does not yet compile.">
       <created>1560536375856</created>
@@ -1001,11 +999,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34554000" />
+    <option name="totallyTimeSpent" value="37265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28863636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1013,7 +1010,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848485" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848485" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1090,32 +1087,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/appcore/AppCore.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/appcore/components/Teacher.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/appcore/components/Schedule.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#839#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#error#0;class#Schedule#0" />
-            <element signature="method#parseGrade#0;class#Schedule#0" />
-            <element signature="method#parseDay#0;class#Schedule#0" />
-            <element signature="method#parseCell#1;class#Schedule#0" />
-            <element signature="method#parseTeachers#0;class#Schedule#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1144,15 +1115,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1123">
-          <caret line="740" column="69" selection-start-line="740" selection-start-column="69" selection-end-line="740" selection-end-column="69" />
+        <state relative-caret-position="1153">
+          <caret line="745" column="69" selection-start-line="745" selection-start-column="69" selection-end-line="745" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#error#0;class#Schedule#0" />
+            <element signature="method#parseGrade#0;class#Schedule#0" />
+            <element signature="method#parseDay#0;class#Schedule#0" />
+            <element signature="method#parseCell#1;class#Schedule#0" />
+            <element signature="method#parseTeachers#0;class#Schedule#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#839#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
