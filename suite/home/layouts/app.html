@@ -1,27 +1,46 @@
 <!--
  Copyright (c) 2019 Nadav Tasher
- https://github.com/NadavTasher/HandasaimWeb/
+ https://github.com/NadavTasher/ScheduleSuite/
 -->
 
 <div id="home" column>
-    <div id="dashboard" row>
-        <p id="message">
-        </p>
-        <div id="glance" column>
-            <p id="top" onclick="switcher_open();"></p>
-            <p id="bottom"></p>
-            <div id="ui" row>
-                <img id="refresh-page" src="resources/svg/icons/white/refresh.svg" onclick="window.location.reload(true);" alt="Reload"/>
-                <img id="share-single" src="resources/svg/icons/white/private_share.svg" alt="Private Share"/>
-                <img id="share-multiple" src="resources/svg/icons/white/public_share.svg" alt="Public Share"/>
-                <img id="transit-shortcut" onclick="window.location = 'moovit://directions?dest_lat=32.164813&dest_lon=34.826688&dest_name=Handasaim High&partner_id=HandasaimWeb';"
-                     src="resources/svg/icons/white/transit.svg"
-                     alt="Transit Shortcut"/>
+    <div id="mobile" column>
+        <div id="mobile-top" row>
+            <div id="mobile-left" column>
+                <div id="mobile-glance" onclick="switcher_open();" column>
+                    <p id="mobile-name"></p>
+                    <p id="mobile-day"></p>
+                </div>
+                <div row>
+                    <img id="refresh-page" src="resources/svg/icons/buttons/white/refresh.svg" onclick="window.location.reload(true);" alt="Reload"/>
+                    <img id="share-single" src="resources/svg/icons/buttons/white/private_share.svg" alt="Private Share"/>
+                    <img id="share-multiple" src="resources/svg/icons/buttons/white/public_share.svg" alt="Public Share"/>
+                    <img id="transit-shortcut" onclick="window.location = 'moovit://directions?[TransitDestination];"
+                         src="resources/svg/icons/buttons/white/transit.svg"
+                         alt="Transit Shortcut"/>
+                </div>
+            </div>
+            <div id="mobile-right" column>
+                <p id="mobile-message"></p>
             </div>
         </div>
+        <div id="mobile-content" column>
+            <div id="mobile-grades" row></div>
+            <div id="mobile-subjects"></div>
+        </div>
     </div>
-    <div id="schedule" column>
-        <div id="grades" row></div>
-        <div id="subjects"></div>
+    <div id="desktop" column>
+        <div id="desktop-top" row>
+            <div id="desktop-left" column>
+                <p id="desktop-clock"></p>
+            </div>
+            <div id="desktop-right" column>
+                <p id="desktop-message"></p>
+            </div>
+        </div>
+        <div id="desktop-content" column>
+            <div id="desktop-grades" row></div>
+            <div id="desktop-subjects"></div>
+        </div>
     </div>
 </div>

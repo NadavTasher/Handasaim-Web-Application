@@ -1,7 +1,4 @@
-const SCHEDULE_ENDPOINTS = [
-    "files/schedule.json",
-    "https://raw.githubusercontent.com/HWBB/LastResort/master/files/schedule.json"
-];
+const SCHEDULE_FILE = "files/schedule.json";
 
 const SCHEDULE_DAYS = [
     "יום כלשהו",
@@ -15,7 +12,7 @@ const SCHEDULE_DAYS = [
 ];
 
 function schedule_load(callback) {
-    fetch(SCHEDULE_ENDPOINTS[0], {
+    fetch(SCHEDULE_FILE, {
         method: "get"
     }).then(response => {
         response.text().then((result) => {

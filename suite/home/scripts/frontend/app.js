@@ -1,10 +1,10 @@
-const DESKTOP_SCROLL_INTERVAL = 7000;
+const DESKTOP_SCROLL_INTERVAL = 7 * 1000;
 const MESSAGE_REFRESH_INTERVAL = 5 * 1000;
-const MILLISECONDS_TO_RELOAD = 60 * 1000 * 20;
+const CLOCK_REFRESH_INTERVAL = 10 * 1000;
 const GRADE_COOKIE = "grade";
 const
-    bottomColor = "#00827E",
-    topColor = "#00649C";
+    BOTTOM_COLOR = "[BottomColor]",
+    TOP_COLOR = "[TopColor]";
 
 const ORIENTATION = screen.width > screen.height;
 const ORIENTATION_HORIZONTAL = true;
@@ -12,7 +12,7 @@ const ORIENTATION_VERTICAL = false;
 
 function load() {
     view("home");
-    background_load(topColor, bottomColor);
+    background_load(TOP_COLOR, BOTTOM_COLOR);
     schedule_load((schedule) => {
         messages_load(schedule);
         grades_load(schedule, null);
@@ -267,8 +267,7 @@ function desktop_load(schedule) {
     setInterval(() => {
         let now = new Date();
         glance(now.getHours() + ":" + ((now.getMinutes() < 10) ? "0" + now.getMinutes() : now.getMinutes()), "");
-    }, 10000);
-    setTimeout(() => window.location.reload(true), MILLISECONDS_TO_RELOAD);
+    }, CLOCK_REFRESH_INTERVAL);
 }
 
 function mobile_load(schedule) {
@@ -292,9 +291,9 @@ function mobile_load(schedule) {
         hide("grades");
         let tutorial = make("div");
         let icon = make("img");
-        let text1 = make("p", "Welcome!");
-        let text2 = make("p", "This is the official schedule app for Handasaim High, Herzliya.");
-        let button = make("button", "Let's begin, shall we?");
+        let text1 = make("p", "Welcome to [AppName]!");
+        let text2 = make("p", "[WelcomeMessage]");
+        let button = make("button", "Let's begin!");
         tutorial.style.height = "100%";
         text1.style.fontSize = "8vh";
         text1.style.color = "#FFFFFF";
@@ -304,21 +303,18 @@ function mobile_load(schedule) {
         text2.style.color = "#FFFFFF";
         text2.style.direction = "ltr";
         text2.style.margin = "2vh 0";
-        icon.src = "resources/svg/icons/app/icon_transparent.svg";
+        icon.src = "images/icons/app/icon.png";
         icon.style.maxHeight = "20vh";
         button.style.direction = "ltr";
         button.onclick = () =>
-            transition(tutorial, OUT, () =>
-                grade_load(schedule, schedule.day, schedule.grades[0]));
+                grade_load(schedule, schedule.day, schedule.grades[0]);
         tutorial.appendChild(icon);
         tutorial.appendChild(text1);
         tutorial.appendChild(text2);
         tutorial.appendChild(button);
         get("subjects").style.height = "100%";
         get("subjects").appendChild(tutorial);
-        transition(tutorial, IN);
     }
-
     instruct();
 }
 
