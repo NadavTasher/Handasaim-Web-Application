@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d69e86-e339-4674-b21a-d401efb83368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../embed/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcsWorkingDirs/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/parser/Schedule.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/libs/HandasaimScheduler-8.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/libs/scheduler.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/fatJar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/parser/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../upload/scripts/backend/upload/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../upload/scripts/backend/upload/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -63,28 +29,28 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HandasaimScheduler" type="f1a62948:ProjectNode" />
+                <item name="ScheduleSuiteParser" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HandasaimScheduler" type="f1a62948:ProjectNode" />
+                <item name="ScheduleSuiteParser" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HandasaimScheduler" type="f1a62948:ProjectNode" />
+                <item name="ScheduleSuiteParser" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HandasaimScheduler" type="f1a62948:ProjectNode" />
+                <item name="ScheduleSuiteParser" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HandasaimScheduler" type="f1a62948:ProjectNode" />
+                <item name="ScheduleSuiteParser" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="other" type="c8890929:TasksNode$1" />
               </path>
@@ -161,13 +127,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="21" />
+          <entry key="gradle" value="34" />
           <entry key="java" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="21" />
+          <entry key="Groovy" value="34" />
           <entry key="JAVA" value="55" />
         </counts>
       </usages-collector>
@@ -175,14 +141,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -191,7 +154,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/parser/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-879">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#error#0;class#Schedule#0" />
@@ -204,7 +167,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -240,7 +203,6 @@
       <find>&quot;subjects&quot;</find>
       <find>&quot;teachers&quot;</find>
       <find>&quot;name&quot;</find>
-      <find>&lt;name of author&gt;</find>
       <find>&lt;</find>
       <find>String</find>
       <find>static</find>
@@ -250,7 +212,6 @@
       <replace>SUBJECTS</replace>
       <replace>TEACHERS</replace>
       <replace>NAME</replace>
-      <replace>Nadav Tasher</replace>
       <replace>final String</replace>
       <replace>public static</replace>
       <replace>private</replace>
@@ -669,12 +630,12 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="HandasaimScheduler" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="HandasaimScheduler" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="ScheduleSuiteParser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ScheduleSuiteParser" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
             <path>
-              <item name="HandasaimScheduler" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="HandasaimScheduler" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="ScheduleSuiteParser" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ScheduleSuiteParser" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
@@ -723,7 +684,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/nadav/IdeaProjects/HandasaimScheduler/src/main/java/appcore/AppCore.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/nadav/IdeaProjects/ScheduleSuiteParser/src/main/java/appcore/AppCore.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -750,8 +711,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.HandasaimScheduler [build]">
-    <configuration name="HandasaimScheduler [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ScheduleSuiteParser [build]">
+    <configuration name="ScheduleSuiteParser [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -769,7 +730,7 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration name="HandasaimScheduler [fatJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ScheduleSuiteParser [fatJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -789,13 +750,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.Run" />
-      <item itemvalue="Gradle.HandasaimScheduler [fatJar]" />
-      <item itemvalue="Gradle.HandasaimScheduler [build]" />
+      <item itemvalue="Gradle.ScheduleSuiteParser [fatJar]" />
+      <item itemvalue="Gradle.ScheduleSuiteParser [build]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.HandasaimScheduler [build]" />
-        <item itemvalue="Gradle.HandasaimScheduler [fatJar]" />
+        <item itemvalue="Gradle.ScheduleSuiteParser [build]" />
+        <item itemvalue="Gradle.ScheduleSuiteParser [fatJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -818,7 +779,7 @@
       <workItem from="1567086620763" duration="1880000" />
       <workItem from="1567350904826" duration="4023000" />
       <workItem from="1570478231015" duration="3021000" />
-      <workItem from="1570527208832" duration="904000" />
+      <workItem from="1570527208832" duration="1112000" />
     </task>
     <task id="LOCAL-00001" summary="General progress, does not yet compile.">
       <created>1560536375856</created>
@@ -985,7 +946,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34059000" />
+    <option name="totallyTimeSpent" value="34267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -1088,7 +1049,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/parser/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-879">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#error#0;class#Schedule#0" />
@@ -1110,20 +1071,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1179,7 +1137,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>HandasaimScheduler_test|HandasaimScheduler</last-edited>
+          <last-edited>ScheduleSuiteParser_test|ScheduleSuiteParser</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
