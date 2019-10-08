@@ -19,6 +19,9 @@ api(UPLOAD_API, function ($action, $parameters) {
                 file_put_contents(UPLOAD_WORKING_DIRECTORY . DIRECTORY_SEPARATOR . "input.bin", base64_decode($parameters->contents));
 
 //                shell_exec("libreoffice --convert-to xlsx --outdir " . WORKING_DIRECTORY . " " . EXCEL_FILE . " --headless");
+//                shell_exec("libreoffice --convert-to xlsx --outdir " . WORKING_DIRECTORY . " " . EXCEL_FILE . " --headless");
+//                shell_exec("libreoffice --convert-to html --outdir " . WORKING_DIRECTORY . " " . EXCEL_FILE . " --headless");
+//                file_put_contents(HTML_FILE, str_replace("<html>", "<html dir='rtl'>", file_get_contents(HTML_FILE)));
 
             }
         }
