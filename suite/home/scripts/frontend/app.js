@@ -16,7 +16,6 @@ function load() {
     schedule_load((schedule) => {
         messages_load(schedule);
         grades_load(schedule, null);
-        hide("ui");
         if (ORIENTATION === ORIENTATION_HORIZONTAL) {
             desktop_load(schedule);
         } else {
@@ -26,63 +25,9 @@ function load() {
 
 }
 
-function glance(top, bottom) {
-    get("top").innerText = top;
-    get("bottom").innerText = bottom;
-}
 
-function messages_load(schedule) {
-    // Set message overflow behaviour
-    if (ORIENTATION === ORIENTATION_VERTICAL) {
-        get("message").style.overflowY = "scroll";
-    } else {
-        get("message").style.overflowY = "hidden";
-    }
-    // Check for messages in schedule
-    if (schedule.hasOwnProperty("messages")) {
-        if (schedule.messages.length > 0) {
-            // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
-            let index = 0;
-            let next = () => {
-                if (schedule.messages.length > 0) {
-                    get("message").innerText = schedule.messages[index];
-                    if (index < schedule.messages.length - 1) {
-                        index++;
-                    } else {
-                        index = 0;
-                    }
-                }
-            };
-            next();
-            setInterval(next, MESSAGE_REFRESH_INTERVAL);
-            show("message");
-        } else {
-            hide("message");
-        }
-    } else {
-        hide("message");
-    }
-}
 
-function background_load(top, bottom) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom," + top + ", " + bottom + ")";
-    document.body.style.backgroundColor = top;
-    if (window.hasOwnProperty("android")) {
-        window.android.colors(top, bottom);
-    }
-}
 
-function grade_load(schedule, day, grade) {
-    if (grade.hasOwnProperty("name") &&
-        grade.hasOwnProperty("subjects")) {
-        show("ui");
-        glance(grade.name, schedule_day(schedule.day));
-        switcher_close();
-        sharables_load(schedule, grade);
-        subjects_load(schedule.schedule, grade.subjects, "subjects", null);
-        schedule_push_cookie(GRADE_COOKIE, grade.name);
-    }
-}
 
 function grades_load(schedule) {
     clear("subjects");
@@ -132,76 +77,8 @@ function grades_load(schedule) {
     }
 }
 
-function export_grade(grade, separator = "\n") {
-    if (grade.hasOwnProperty("name") &&
-        grade.hasOwnProperty("subjects")) {
-        let text = name + separator;
-        for (let h = 0; h <= 15; h++) {
-            if (grade.subjects.hasOwnProperty(h)) {
-                let current = grade.subjects[h];
-                if (current.hasOwnProperty("name")) {
-                    text += "\u200F" + h + ". " + current.name + separator;
-                }
-            }
-        }
-        return text;
-    }
-    return "Invalid grade, oops.";
-}
 
-function sharables_load(schedule, grade, separator = "\n") {
-    let complete = "";
-    if (schedule.hasOwnProperty("grades")) {
-        for (let g = 0; g < schedule.grades.length; g++) {
-            let current = schedule.grades[g];
-            if (current.hasOwnProperty("grade") && grade.hasOwnProperty("grade")) {
-                if (current.grade === grade.grade) {
-                    complete += current.name;
-                    complete += export_grade(current, separator) + separator + separator;
-                }
-            }
-        }
-    }
-    if (schedule.hasOwnProperty("messages")) {
-        if (schedule.messages.length > 0) {
-            complete += separator;
-            for (let m = 0; m < schedule.messages.length; m++) {
-                complete += "\u200F" + (m + 1) + ". " + schedule.messages[m] + separator;
-            }
-        }
-    }
-    get("share-single").onclick = messaging_share(grade.name + export_grade(grade, separator));
-    get("share-multiple").onclick = messaging_share(complete);
-}
 
-function messaging_share(text) {
-    return () => {
-        window.location = "whatsapp://send?text=" + encodeURIComponent(text);
-    };
-}
-
-function teachers_text(subject) {
-    let teachers = "";
-    if (subject.hasOwnProperty("teachers")) {
-        for (let t = 0; t < subject.teachers.length; t++) {
-            let teacher = subject.teachers[t].split(" ")[0];
-            if (teachers.length === 0) {
-                teachers = teacher;
-            } else {
-                teachers += " · ";
-                teachers += teacher;
-            }
-        }
-    }
-    return teachers;
-}
-
-function time_text(schedule, hour) {
-    if (schedule.length > hour)
-        return schedule_time(schedule[hour]) + " - " + schedule_time(schedule[hour] + 45);
-
-    return "";
-}
 
 function subjects_load(schedule, subjects, v, dayLength = null) {
     let minimal = dayLength !== null;
@@ -240,83 +117,9 @@ function subjects_load(schedule, subjects, v, dayLength = null) {
     }
 }
 
-function desktop_load(schedule) {
 
-    get("grades").setAttribute("mobile", false);
 
-    row("subjects");
-    get("subjects").setAttribute("mobile", false);
 
-    // Scroll load
-    let scrollable = get("subjects");
-    let height = parseInt(getComputedStyle(scrollable).height);
-    let min = 0;
-    let max = scrollable.scrollHeight - height;
-    let desktopScrollDirection = true, desktopScrollPaused = false;
-    let targetScroll = scrollable.scrollTop;
-    setInterval(() => {
-        if (!desktopScrollPaused) {
-            if (targetScroll >= max ||
-                targetScroll <= min)
-                desktopScrollDirection = !(targetScroll >= max);
-            let toAdd = (desktopScrollDirection ? 1 : -1) * height;
-            targetScroll += toAdd;
-            scrollable.scrollBy(0, toAdd);
-        }
-    }, DESKTOP_SCROLL_INTERVAL);
-    setInterval(() => {
-        let now = new Date();
-        glance(now.getHours() + ":" + ((now.getMinutes() < 10) ? "0" + now.getMinutes() : now.getMinutes()), "");
-    }, CLOCK_REFRESH_INTERVAL);
-}
-
-function mobile_load(schedule) {
-
-    get("grades").setAttribute("mobile", true);
-
-    column("subjects");
-    get("subjects").setAttribute("mobile", true);
-
-    if (schedule_has_cookie(GRADE_COOKIE)) {
-        if (schedule.hasOwnProperty("schedule") && schedule.hasOwnProperty("day") && schedule.hasOwnProperty("grades")) {
-            let name = schedule_pull_cookie(GRADE_COOKIE);
-            for (let g = 0; g < schedule.grades.length; g++) {
-                if (schedule.grades[g].hasOwnProperty("name") && schedule.grades[g].hasOwnProperty("subjects")) {
-                    if (schedule.grades[g].name === name) grade_load(schedule, schedule.day, schedule.grades[g]);
-                }
-            }
-        }
-    } else {
-        hide("dashboard");
-        hide("grades");
-        let tutorial = make("div");
-        let icon = make("img");
-        let text1 = make("p", "Welcome to [AppName]!");
-        let text2 = make("p", "[WelcomeMessage]");
-        let button = make("button", "Let's begin!");
-        tutorial.style.height = "100%";
-        text1.style.fontSize = "8vh";
-        text1.style.color = "#FFFFFF";
-        text1.style.direction = "ltr";
-        text1.style.margin = "2vh 0";
-        text2.style.fontSize = "4vh";
-        text2.style.color = "#FFFFFF";
-        text2.style.direction = "ltr";
-        text2.style.margin = "2vh 0";
-        icon.src = "images/icons/app/icon.png";
-        icon.style.maxHeight = "20vh";
-        button.style.direction = "ltr";
-        button.onclick = () =>
-                grade_load(schedule, schedule.day, schedule.grades[0]);
-        tutorial.appendChild(icon);
-        tutorial.appendChild(text1);
-        tutorial.appendChild(text2);
-        tutorial.appendChild(button);
-        get("subjects").style.height = "100%";
-        get("subjects").appendChild(tutorial);
-    }
-    instruct();
-}
 
 function switcher_open() {
     show("grades");

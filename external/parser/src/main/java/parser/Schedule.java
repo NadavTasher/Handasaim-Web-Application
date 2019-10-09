@@ -30,7 +30,7 @@ public class Schedule extends JSONObject {
     private static final String SUBJECTS = "subjects";
     private static final String MESSAGES = "messages";
     private static final String TEACHERS = "teachers";
-    private static final String SCHEDULE = "schedule";
+    private static final String TIMES = "times";
     private static final String ERRORS = "errors";
     private static final String GRADES = "grades";
     private static final String GRADE = "grade";
@@ -69,7 +69,7 @@ public class Schedule extends JSONObject {
             // Initialize teachers
             put(TEACHERS, parseTeachers(getJSONArray(GRADES)));
             // Add ringing times
-            put(SCHEDULE, new int[]{465, 510, 555, 615, 660, 730, 775, 830, 875, 930, 975, 1020, 1065});
+            put(TIMES, new int[]{465, 510, 555, 615, 660, 730, 775, 830, 875, 930, 975, 1020, 1065});
         }
     }
 
