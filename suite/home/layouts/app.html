@@ -7,7 +7,7 @@
     <div id="mobile" column>
         <div id="mobile-top" row>
             <div id="mobile-left" column>
-                <div id="mobile-glance" onclick="switcher_open();" column>
+                <div id="mobile-glance" onclick="view(mobile_get('names'));" column>
                     <p id="mobile-name"></p>
                     <p id="mobile-day"></p>
                 </div>
@@ -23,8 +23,8 @@
             </div>
         </div>
         <div id="mobile-content" column>
-            <div id="mobile-grades" row></div>
-            <div id="mobile-subjects"></div>
+            <div id="mobile-names" column></div>
+            <div id="mobile-subjects" column></div>
         </div>
     </div>
     <div id="desktop" column>
@@ -38,7 +38,7 @@
         </div>
         <div id="desktop-content" column>
             <div id="desktop-grades" row></div>
-            <div id="desktop-subjects"></div>
+            <div id="desktop-subjects" row></div>
         </div>
     </div>
 </div>

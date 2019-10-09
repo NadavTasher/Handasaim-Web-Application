@@ -1,10 +1,12 @@
 const LONGEST_DAY = 15;
 
+const SCHEDULE_SUBJECTS = "subjects";
+const SCHEDULE_MESSAGES = "messages";
+const SCHEDULE_TEACHERS = "teachers";
 const SCHEDULE_TIMES = "times";
 const SCHEDULE_GRADES = "grades";
 const SCHEDULE_GRADE = "grade";
 const SCHEDULE_NAME = "name";
-const SCHEDULE_SUBJECTS = "subjects";
 const SCHEDULE_DAY = "day";
 
 const SCHEDULE_FILE = "files/schedule.json";
@@ -25,7 +27,7 @@ const TRANSIT_DESTINATION = "[TransitDestination]";
 const MOOVIT_ENDPOINT = "moovit://directions?";
 const WHATSAPP_ENDPOINT = "whatsapp://send?text=";
 
-function schedule_load(callback) {
+function global_schedule_load(callback) {
     fetch(SCHEDULE_FILE, {
         method: "get"
     }).then(response => {
@@ -35,26 +37,13 @@ function schedule_load(callback) {
     });
 }
 
-function schedule_time(minute) {
-    const minutes = minute % 60;
-    let time = "";
-    time += (minute - minutes) / 60;
-    time += ":";
-    time += (minutes < 10) ? "0" : "";
-    time += minutes;
-    return time;
+
+
+function global_has_cookie(name) {
+    return global_pull_cookie(name) !== null;
 }
 
-function schedule_day(day) {
-    if (day < SCHEDULE_DAYS.length)
-        return SCHEDULE_DAYS[day];
-}
-
-function schedule_has_cookie(name) {
-    return schedule_pull_cookie(name) !== null;
-}
-
-function schedule_pull_cookie(name) {
+function global_pull_cookie(name) {
     name += "=";
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -69,36 +58,49 @@ function schedule_pull_cookie(name) {
     return null;
 }
 
-function schedule_push_cookie(name, value) {
+function global_push_cookie(name, value) {
     const date = new Date();
     date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
     document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + date.toUTCString() + ";domain=" + window.location.hostname + ";path=/";
 }
 
-function global_teachers_text(subject) {
-    let teachers = "";
-    if (subject.hasOwnProperty("teachers")) {
-        for (let t = 0; t < subject.teachers.length; t++) {
-            let teacher = subject.teachers[t].split(" ")[0];
-            if (teachers.length === 0) {
-                teachers = teacher;
-            } else {
-                teachers += " · ";
-                teachers += teacher;
-            }
+function global_teachers_to_text(teachers) {
+    let text = "";
+    for (let t = 0; t < teachers.length; t++) {
+        let teacher = teachers[t].split(" ")[0];
+        if (teachers.length === 0) {
+            text = teacher;
+        } else {
+            text += " · ";
+            text += teacher;
         }
     }
-    return teachers;
+    return text;
 }
 
-function global_time_text(schedule, hour) {
+function global_minute_to_text(minute) {
+    const minutes = minute % 60;
+    let time = "";
+    time += (minute - minutes) / 60;
+    time += ":";
+    time += (minutes < 10) ? "0" : "";
+    time += minutes;
+    return time;
+}
+
+function global_day_to_text(day) {
+    if (day < SCHEDULE_DAYS.length)
+        return SCHEDULE_DAYS[day];
+}
+
+function global_times_to_text(schedule, hour) {
     if (schedule.length > hour)
-        return schedule_time(schedule[hour]) + " - " + schedule_time(schedule[hour] + 45);
+        return global_minute_to_text(schedule[hour]) + " - " + global_minute_to_text(schedule[hour] + 45);
 
     return "";
 }
 
-function global_messages_load(schedule) {
+function global_messages_load(messages, view) {
     // Set message overflow behaviour
     if (ORIENTATION === ORIENTATION_VERTICAL) {
         get("message").style.overflowY = "scroll";
@@ -139,8 +141,8 @@ function global_background_load(top, bottom) {
     }
 }
 
-function external_callback(endpoint, extra) {
+function global_external_callback(endpoint, extra) {
     return function () {
-        window.location = endpoint + endpoint;
+        window.location = endpoint + extra;
     };
 }

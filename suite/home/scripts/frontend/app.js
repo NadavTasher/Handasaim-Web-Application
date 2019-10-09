@@ -13,7 +13,7 @@ const ORIENTATION_VERTICAL = false;
 function load() {
     view("home");
     background_load(TOP_COLOR, BOTTOM_COLOR);
-    schedule_load((schedule) => {
+    global_schedule_load((schedule) => {
         messages_load(schedule);
         grades_load(schedule, null);
         if (ORIENTATION === ORIENTATION_HORIZONTAL) {
@@ -115,19 +115,4 @@ function subjects_load(schedule, subjects, v, dayLength = null) {
         if (subjects.hasOwnProperty(h) || minimal)
             get(v).appendChild(subject);
     }
-}
-
-
-
-
-
-function switcher_open() {
-    show("grades");
-    get("subjects").style.height = "0";
-}
-
-function switcher_close() {
-    show("dashboard");
-    hide("grades");
-    get("subjects").style.height = "100%";
 }

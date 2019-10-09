@@ -260,8 +260,11 @@ public class Schedule extends JSONObject {
                                 if (((String) name).startsWith(((JSONObject) teacher).getString(NAME)) || ((JSONObject) teacher).getString(NAME).startsWith(((String) name))) {
                                     // Pull subjects object from teacher
                                     JSONObject subjects = ((JSONObject) teacher).getJSONObject(SUBJECTS);
+                                    // Create subject
+                                    JSONObject subject = new JSONObject();
+                                    subject.put(NAME, ((JSONObject) grade).getString(NAME));
                                     // Insert subject
-                                    subjects.put(hour, ((JSONObject) grade).getString(NAME));
+                                    subjects.put(hour, subject);
                                     // Check if subject's teacher name is longer, and replace.
                                     if (((String) name).length() > ((JSONObject) teacher).getString(NAME).length()) {
                                         // Replace teacher name
