@@ -4,6 +4,7 @@ function mobile_names_load(schedule) {
         SCHEDULE_TEACHERS in schedule) {
         for (let gradeIndex = 0; gradeIndex < schedule[SCHEDULE_GRADES].length; gradeIndex++) {
             let grade = make("button", schedule[SCHEDULE_GRADES][gradeIndex][SCHEDULE_NAME]);
+            grade.style.padding = "1vh";
             grade.addEventListener("click", function () {
                 mobile_grade_load(schedule, grade.innerText);
             });
@@ -11,6 +12,7 @@ function mobile_names_load(schedule) {
         }
         for (let teacherIndex = 0; teacherIndex < schedule[SCHEDULE_TEACHERS].length; teacherIndex++) {
             let teacher = make("button", schedule[SCHEDULE_TEACHERS][teacherIndex][SCHEDULE_NAME]);
+            teacher.style.padding = "1vh";
             teacher.addEventListener("click", function () {
                 mobile_teacher_load(schedule, teacher.innerText);
             });
@@ -66,6 +68,11 @@ function mobile_glance(name, day) {
 
 function mobile_load(schedule) {
     mobile_names_load(schedule);
+    if(SCHEDULE_MESSAGES in schedule){
+        global_messages_load(schedule[SCHEDULE_MESSAGES],mobile_get("message"));
+    }else{
+        hide(mobile_get("message"));
+    }
     if (SCHEDULE_GRADES in schedule) {
         if (global_has_cookie(GRADE_COOKIE)) {
             mobile_grade_load(schedule, global_pull_cookie(GRADE_COOKIE));
@@ -129,7 +136,9 @@ function mobile_subjects_load(schedule, subjects) {
         // Check if hour exists in subjects
         if (h.toString() in subjects) {
             // Create the subject view
-            let subject = make("div", null, ["padded", "coasted", "maximal"]);
+            let subject = make("div", null, ["padded", "maximal"]);
+            // Make the subject an input
+            input(subject);
             // Create the bottom view
             let bottom = make("div");
             // Make the bottom view a row

@@ -39,7 +39,6 @@ function global_schedule_load(callback) {
     });
 }
 
-
 function global_has_cookie(name) {
     return global_pull_cookie(name) !== null;
 }
@@ -69,7 +68,7 @@ function global_teachers_to_text(teachers) {
     let text = "";
     for (let t = 0; t < teachers.length; t++) {
         let teacher = teachers[t].split(" ")[0];
-        if (teachers.length === 0) {
+        if (text.length === 0) {
             text = teacher;
         } else {
             text += " · ";
@@ -102,35 +101,23 @@ function global_times_to_text(schedule, hour) {
 }
 
 function global_messages_load(messages, view) {
-    // Set message overflow behaviour
-    if (ORIENTATION === ORIENTATION_VERTICAL) {
-        get("message").style.overflowY = "scroll";
-    } else {
-        get("message").style.overflowY = "hidden";
-    }
     // Check for messages in schedule
-    if (schedule.hasOwnProperty("messages")) {
-        if (schedule.messages.length > 0) {
-            // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
-            let index = 0;
-            let next = () => {
-                if (schedule.messages.length > 0) {
-                    get("message").innerText = schedule.messages[index];
-                    if (index < schedule.messages.length - 1) {
-                        index++;
-                    } else {
-                        index = 0;
-                    }
-                }
-            };
-            next();
-            setInterval(next, MESSAGE_REFRESH_INTERVAL);
-            show("message");
-        } else {
-            hide("message");
-        }
+    if (messages.length > 0) {
+        // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
+        let index = 0;
+        let next = () => {
+            view.innerText = messages[index];
+            if (index < messages.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+        };
+        next();
+        setInterval(next, MESSAGE_REFRESH_INTERVAL);
+        show(view);
     } else {
-        hide("message");
+        hide(view);
     }
 }
 

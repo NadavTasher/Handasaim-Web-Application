@@ -6,27 +6,51 @@ html {
     overflow-y: hidden;
 }
 
-/* Global Design */
-
-#glance {
-    min-width: 30vw;
-    max-width: 30vw;
-    width: 30vw;
+#home {
+    justify-content: start;
 }
 
-#dashboard {
+/* Mobile Design */
+
+#mobile-glance {
+    margin: 1vh;
+}
+
+#mobile-glance > p {
+    padding: 0;
+}
+
+#mobile-top {
     margin: 1vh;
     padding: 1vh;
-    height: 18vh;
+    height: 22vh;
     overflow: hidden;
 }
 
-#dashboard > * {
+#mobile-top > * {
     padding: 1vh;
     margin: 1vh;
 }
 
-#message {
+#mobile-top p {
+    color: #FFFFFF;
+}
+
+#mobile-top img {
+    width: 4vh;
+    height: 4vh;
+    margin: 0 1vh;
+}
+
+#mobile-name {
+    font-size: 6vh;
+}
+
+#mobile-day {
+    font-size: 4vh;
+}
+
+#mobile-message {
     /* WebKit Mobile Scrolling */
     -webkit-overflow-scrolling: touch;
     align-content: normal;
@@ -37,117 +61,34 @@ html {
     padding: 0 1vh;
 }
 
-#home {
-    justify-content: start;
-    direction: rtl;
-}
-
-#dashboard p {
-    color: #FFFFFF;
-}
-
-#schedule {
-    padding: 1vh;
-}
-
-#schedule p {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-#grades {
+#mobile-names {
     /* WebKit Mobile Scrolling */
     -webkit-overflow-scrolling: touch;
     min-height: min-content;
 }
 
-#grades[mobile=true] {
-    overflow-x: scroll;
-    margin: 1vh;
-}
-
-#grades[mobile=false] {
-    overflow-x: hidden;
-    margin: 0;
-}
-
-#grades::-webkit-scrollbar {
-    width: 0 !important;
-    height: 0 !important;
-}
-
-#grades, #subjects {
-    overflow-x: scroll;
-    justify-content: space-between;
-}
-
-#subjects {
+#mobile-content > div {
     /* WebKit Mobile Scrolling */
     -webkit-overflow-scrolling: touch;
-    height: 60vh;
-    min-height: 60vh;
+    justify-content: start;
+    overflow-y: scroll;
+    height: 70vh;
+    min-height: 70vh;
     max-height: 70vh;
     scroll-behavior: smooth;
 }
 
-#subjects[mobile=false] {
-    overflow-x: hidden;
-    /* Mozilla Hidden Scrolling */
-    overflow: -moz-scrollbars-none;
-    align-items: start;
+#mobile-content > div::-webkit-scrollbar {
+    display: none;
 }
 
-#subjects::-webkit-scrollbar {
-    width: 0 !important;
-    height: 0 !important;
-}
-
-#glance>*{
-    padding: 0;
-    margin: 0.5vh;
-}
-
-#top {
-    font-size: 7vh;
-}
-
-#bottom{
-    font-size: 3vh;
-}
-
-#ui > img {
-    max-height: 4vh;
-    margin: 0 .5vh;
-    width: 100%;
-}
-
-/* Safari Add-to-home Prompt */
-
-#safari-prompt {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 1vh;
-    padding: 1vh;
-    height: 6vh;
-    background-color: #ffffffee;
-}
-
-#safari-prompt > * {
-    max-height: 6vh;
+#mobile p {
+    direction: rtl;
 }
 
 .padded {
     padding: 1vh;
     margin: 0.5vh;
-}
-
-.coasted {
-    background-color: #ddddee;
-    border-radius: 1vh;
-    border-color: transparent;
 }
 
 .minimal {
@@ -165,7 +106,6 @@ html {
 
 .maximal > p {
     justify-content: start;
-    margin: 2vh !important;
 }
 
 .maximal > div > p {

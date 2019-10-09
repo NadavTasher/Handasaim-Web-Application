@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d69e86-e339-4674-b21a-d401efb83368" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../suite/home/files/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/files/schedule.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../suite/home/scripts/frontend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/scripts/frontend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../suite/home/layouts/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/layouts/app.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../suite/home/scripts/frontend/schedule/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/scripts/frontend/schedule/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../suite/home/scripts/frontend/schedule/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/scripts/frontend/schedule/mobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../suite/home/stylesheets/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/home/stylesheets/app.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -810,7 +811,7 @@
       <workItem from="1567350904826" duration="4023000" />
       <workItem from="1570478231015" duration="3021000" />
       <workItem from="1570527208832" duration="4110000" />
-      <workItem from="1570633720874" duration="3155000" />
+      <workItem from="1570633720874" duration="3172000" />
     </task>
     <task id="LOCAL-00001" summary="General progress, does not yet compile.">
       <created>1560536375856</created>
@@ -977,7 +978,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40420000" />
+    <option name="totallyTimeSpent" value="40437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
