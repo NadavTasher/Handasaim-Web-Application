@@ -23,6 +23,8 @@ const SCHEDULE_DAYS = [
 ];
 
 const TRANSIT_DESTINATION = "[TransitDestination]";
+const TOP_COLOR = "[TopColor]";
+const BOTTOM_COLOR = "[BottomColor]";
 
 const MOOVIT_ENDPOINT = "moovit://directions?";
 const WHATSAPP_ENDPOINT = "whatsapp://send?text=";
@@ -36,7 +38,6 @@ function global_schedule_load(callback) {
         });
     });
 }
-
 
 
 function global_has_cookie(name) {
@@ -133,11 +134,11 @@ function global_messages_load(messages, view) {
     }
 }
 
-function global_background_load(top, bottom) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom," + top + ", " + bottom + ")";
-    document.body.style.backgroundColor = top;
-    if (window.hasOwnProperty("android")) {
-        window.android.colors(top, bottom);
+function global_background_load() {
+    document.body.style.backgroundImage = "linear-gradient(to bottom," + TOP_COLOR + ", " + BOTTOM_COLOR + ")";
+    document.body.style.backgroundColor = TOP_COLOR;
+    if ("android" in window && "colors" in window.android) {
+        window.android.colors(TOP_COLOR, BOTTOM_COLOR);
     }
 }
 

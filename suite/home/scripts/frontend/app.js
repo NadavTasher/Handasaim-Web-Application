@@ -2,9 +2,7 @@ const DESKTOP_SCROLL_INTERVAL = 7 * 1000;
 const MESSAGE_REFRESH_INTERVAL = 5 * 1000;
 const CLOCK_REFRESH_INTERVAL = 10 * 1000;
 const GRADE_COOKIE = "grade";
-const
-    BOTTOM_COLOR = "[BottomColor]",
-    TOP_COLOR = "[TopColor]";
+
 
 const ORIENTATION = screen.width > screen.height;
 const ORIENTATION_HORIZONTAL = true;
@@ -12,10 +10,8 @@ const ORIENTATION_VERTICAL = false;
 
 function load() {
     view("home");
-    background_load(TOP_COLOR, BOTTOM_COLOR);
+    global_background_load();
     global_schedule_load((schedule) => {
-        messages_load(schedule);
-        grades_load(schedule, null);
         if (ORIENTATION === ORIENTATION_HORIZONTAL) {
             desktop_load(schedule);
         } else {

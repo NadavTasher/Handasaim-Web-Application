@@ -5,7 +5,6 @@ function mobile_names_load(schedule) {
         for (let gradeIndex = 0; gradeIndex < schedule[SCHEDULE_GRADES].length; gradeIndex++) {
             let grade = make("button", schedule[SCHEDULE_GRADES][gradeIndex][SCHEDULE_NAME]);
             grade.addEventListener("click", function () {
-                view(mobile_get("subjects"));
                 mobile_grade_load(schedule, grade.innerText);
             });
             list.appendChild(grade);
@@ -13,7 +12,6 @@ function mobile_names_load(schedule) {
         for (let teacherIndex = 0; teacherIndex < schedule[SCHEDULE_TEACHERS].length; teacherIndex++) {
             let teacher = make("button", schedule[SCHEDULE_TEACHERS][teacherIndex][SCHEDULE_NAME]);
             teacher.addEventListener("click", function () {
-                view(mobile_get("subjects"));
                 mobile_teacher_load(schedule, teacher.innerText);
             });
             list.appendChild(teacher);
@@ -22,6 +20,7 @@ function mobile_names_load(schedule) {
 }
 
 function mobile_grade_load(schedule, name) {
+    view(mobile_get("subjects"));
     let grade = null;
     if (SCHEDULE_GRADES in schedule) {
         for (let g = 0; g < schedule[SCHEDULE_GRADES].length; g++) {
@@ -42,6 +41,7 @@ function mobile_grade_load(schedule, name) {
 }
 
 function mobile_teacher_load(schedule, name) {
+    view(mobile_get("subjects"));
     let teacher = null;
     if (SCHEDULE_TEACHERS in schedule) {
         for (let g = 0; g < schedule[SCHEDULE_TEACHERS].length; g++) {
@@ -68,9 +68,9 @@ function mobile_load(schedule) {
     mobile_names_load(schedule);
     if (SCHEDULE_GRADES in schedule) {
         if (global_has_cookie(GRADE_COOKIE)) {
-            mobile_grade_load(global_pull_cookie(GRADE_COOKIE));
+            mobile_grade_load(schedule, global_pull_cookie(GRADE_COOKIE));
         } else {
-            mobile_grade_load(schedule[SCHEDULE_GRADES][0][SCHEDULE_NAME]);
+            mobile_grade_load(schedule, schedule[SCHEDULE_GRADES][0][SCHEDULE_NAME]);
         }
     }
     // Nudge iOS users to install the app
