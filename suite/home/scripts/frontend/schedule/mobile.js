@@ -1,10 +1,30 @@
+const MOBILE_GRADE_COOKIE = "grade";
+
+function mobile_load(schedule) {
+    mobile_names_load(schedule);
+    if (SCHEDULE_MESSAGES in schedule) {
+        global_messages_load(schedule[SCHEDULE_MESSAGES], mobile_get("message"));
+    } else {
+        hide(mobile_get("message"));
+    }
+    if (SCHEDULE_GRADES in schedule) {
+        if (global_has_cookie(MOBILE_GRADE_COOKIE)) {
+            mobile_grade_load(schedule, global_pull_cookie(MOBILE_GRADE_COOKIE));
+        } else {
+            mobile_grade_load(schedule, schedule[SCHEDULE_GRADES][0][SCHEDULE_NAME]);
+        }
+    }
+    // Nudge iOS users to install the app
+    instruct();
+}
+
 function mobile_names_load(schedule) {
     let list = mobile_get("names");
     if (SCHEDULE_GRADES in schedule &&
         SCHEDULE_TEACHERS in schedule) {
         for (let gradeIndex = 0; gradeIndex < schedule[SCHEDULE_GRADES].length; gradeIndex++) {
             let grade = make("button", schedule[SCHEDULE_GRADES][gradeIndex][SCHEDULE_NAME]);
-            grade.style.padding = "1vh";
+            grade.style.padding = "2vh";
             grade.addEventListener("click", function () {
                 mobile_grade_load(schedule, grade.innerText);
             });
@@ -12,7 +32,7 @@ function mobile_names_load(schedule) {
         }
         for (let teacherIndex = 0; teacherIndex < schedule[SCHEDULE_TEACHERS].length; teacherIndex++) {
             let teacher = make("button", schedule[SCHEDULE_TEACHERS][teacherIndex][SCHEDULE_NAME]);
-            teacher.style.padding = "1vh";
+            teacher.style.padding = "2vh";
             teacher.addEventListener("click", function () {
                 mobile_teacher_load(schedule, teacher.innerText);
             });
@@ -37,7 +57,7 @@ function mobile_grade_load(schedule, name) {
             mobile_glance(grade[SCHEDULE_NAME], global_day_to_text(schedule[SCHEDULE_DAY]));
             mobile_buttons_load(schedule, grade);
             mobile_subjects_load(schedule[SCHEDULE_TIMES], grade[SCHEDULE_SUBJECTS]);
-            global_push_cookie(GRADE_COOKIE, grade[SCHEDULE_NAME]);
+            global_push_cookie(MOBILE_GRADE_COOKIE, grade[SCHEDULE_NAME]);
         }
     }
 }
@@ -61,29 +81,6 @@ function mobile_teacher_load(schedule, name) {
     }
 }
 
-function mobile_glance(name, day) {
-    mobile_get("name").innerText = name;
-    mobile_get("day").innerText = day;
-}
-
-function mobile_load(schedule) {
-    mobile_names_load(schedule);
-    if(SCHEDULE_MESSAGES in schedule){
-        global_messages_load(schedule[SCHEDULE_MESSAGES],mobile_get("message"));
-    }else{
-        hide(mobile_get("message"));
-    }
-    if (SCHEDULE_GRADES in schedule) {
-        if (global_has_cookie(GRADE_COOKIE)) {
-            mobile_grade_load(schedule, global_pull_cookie(GRADE_COOKIE));
-        } else {
-            mobile_grade_load(schedule, schedule[SCHEDULE_GRADES][0][SCHEDULE_NAME]);
-        }
-    }
-    // Nudge iOS users to install the app
-    instruct();
-}
-
 function mobile_buttons_load(schedule, grade, separator = "\n") {
 
     function mobile_export_grade(grade, separator = "\n") {
@@ -93,7 +90,7 @@ function mobile_buttons_load(schedule, grade, separator = "\n") {
             // Initialize text with grade name and linebreak
             let text = grade[SCHEDULE_NAME] + separator;
             // Loop through hours
-            for (let h = 0; h <= LONGEST_DAY; h++) {
+            for (let h = 0; h <= SCHEDULE_LONGEST_DAY; h++) {
                 // Make sure subjects array has the current hour
                 if (h.toString() in grade[SCHEDULE_SUBJECTS]) {
                     // Make sure subject has a name
@@ -132,24 +129,30 @@ function mobile_subjects_load(schedule, subjects) {
     // Clear subjects list
     clear(mobile_get("subjects"));
     // Loop through hours
-    for (let h = 0; h <= LONGEST_DAY; h++) {
+    for (let h = 0; h <= SCHEDULE_LONGEST_DAY; h++) {
         // Check if hour exists in subjects
         if (h.toString() in subjects) {
             // Create the subject view
-            let subject = make("div", null, ["padded", "maximal"]);
+            let subject = make("div");
             // Make the subject an input
             input(subject);
+            // Set minimal height
+            subject.style.minHeight = "fit-content";
             // Create the bottom view
             let bottom = make("div");
             // Make the bottom view a row
             row(bottom);
+            // Set alignments
+            bottom.style.justifyContent = "space-evenly";
             // Add teacher names to the bottom view
             if (SCHEDULE_TEACHERS in subjects[h])
                 bottom.appendChild(make("p", global_teachers_to_text(subjects[h][SCHEDULE_TEACHERS])));
             // Add beginning and ending times to bottom view
             bottom.appendChild(make("p", global_times_to_text(schedule, h)));
             // Add subject name and hour to the subject view
-            subject.appendChild(make("p", "\u200F" + h.toString() + ". " + subjects[h][SCHEDULE_NAME]));
+            let top = make("p", "\u200F" + h.toString() + ". " + subjects[h][SCHEDULE_NAME]);
+            top.style.justifyContent = "start";
+            subject.appendChild(top);
             // Add bottom view to subject view
             subject.appendChild(bottom);
             // Hide bottom view
@@ -169,6 +172,11 @@ function mobile_subjects_load(schedule, subjects) {
             mobile_get("subjects").appendChild(subject);
         }
     }
+}
+
+function mobile_glance(name, day) {
+    mobile_get("name").innerText = name;
+    mobile_get("day").innerText = day;
 }
 
 function mobile_get(v) {

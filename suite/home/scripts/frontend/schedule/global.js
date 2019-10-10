@@ -1,4 +1,6 @@
-const LONGEST_DAY = 15;
+const MESSAGE_REFRESH_INTERVAL = 5 * 1000;
+
+const SCHEDULE_LONGEST_DAY = 15;
 
 const SCHEDULE_SUBJECTS = "subjects";
 const SCHEDULE_MESSAGES = "messages";
@@ -104,14 +106,10 @@ function global_messages_load(messages, view) {
     // Check for messages in schedule
     if (messages.length > 0) {
         // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
-        let index = 0;
         let next = () => {
-            view.innerText = messages[index];
-            if (index < messages.length - 1) {
-                index++;
-            } else {
-                index = 0;
-            }
+            let message = messages.shift();
+            view.innerText = message;
+            messages.push(message);
         };
         next();
         setInterval(next, MESSAGE_REFRESH_INTERVAL);

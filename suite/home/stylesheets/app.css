@@ -12,12 +12,8 @@ html {
 
 /* Mobile Design */
 
-#mobile-glance {
-    margin: 1vh;
-}
-
-#mobile-glance > p {
-    padding: 0;
+#mobile p {
+    direction: rtl;
 }
 
 #mobile-top {
@@ -50,6 +46,12 @@ html {
     font-size: 4vh;
 }
 
+#mobile-names {
+    /* WebKit Mobile Scrolling */
+    -webkit-overflow-scrolling: touch;
+    min-height: min-content;
+}
+
 #mobile-message {
     /* WebKit Mobile Scrolling */
     -webkit-overflow-scrolling: touch;
@@ -61,10 +63,12 @@ html {
     padding: 0 1vh;
 }
 
-#mobile-names {
-    /* WebKit Mobile Scrolling */
-    -webkit-overflow-scrolling: touch;
-    min-height: min-content;
+#mobile-glance {
+    margin: 1vh;
+}
+
+#mobile-glance > p {
+    padding: 0;
 }
 
 #mobile-content > div {
@@ -82,32 +86,42 @@ html {
     display: none;
 }
 
-#mobile p {
+/* Desktop Design */
+
+#desktop-subjects {
+    min-height: 80vh;
+    max-height: 80vh;
+    height: 80vh;
+
+    align-items: start;
+
+    overflow-y: scroll;
+}
+
+#desktop-subjects::-webkit-scrollbar {
+    display: none;
+}
+
+#desktop-content {
+    align-items: center;
     direction: rtl;
 }
 
-.padded {
-    padding: 1vh;
-    margin: 0.5vh;
+#desktop-content > div {
+    justify-content: stretch;
 }
 
-.minimal {
-    max-width: 7vh;
-    min-width: 7vh;
-    width: 7vh;
-    max-height: 7vh;
-    min-height: 7vh;
-    height: 7vh;
+#desktop-content > div > * {
+    min-width: 6vw;
+    max-width: 6vw;
+    width: 6vw;
 }
 
-.maximal {
-    min-height: fit-content;
-}
-
-.maximal > p {
-    justify-content: start;
-}
-
-.maximal > div > p {
-    width: 100%;
+#desktop-content > div p {
+    min-height: 10vh;
+    max-height: 10vh;
+    height: 10vh;
+    font-size: 3vh;
+    overflow: hidden;
+    background-color: #ddddee;
 }
