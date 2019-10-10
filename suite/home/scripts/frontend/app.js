@@ -1,5 +1,3 @@
-
-
 const ORIENTATION = screen.width > screen.height;
 const ORIENTATION_HORIZONTAL = true;
 const ORIENTATION_VERTICAL = false;

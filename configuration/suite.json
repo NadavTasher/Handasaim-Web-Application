@@ -1,6 +1,15 @@
 {
   "transit": {
-    "destination": "dest_lat=32.164813&dest_lon=34.826688&dest_name=Handasaim High&partner_id=HandasaimWeb'"
+    "destination": ""
   },
-  "domain":""
+  "color": {
+    "top": "",
+    "bottom": ""
+  },
+  "app": {
+    "name": "",
+    "short": "",
+    "description": ""
+  },
+  "domain": ""
 }

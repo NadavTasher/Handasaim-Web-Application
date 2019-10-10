@@ -1,10 +1,10 @@
 {
   "name": "[AppName]",
-  "short_name": "[AppName]",
+  "short_name": "[AppShort]",
   "description": "[AppDescription]",
   "start_url": "../index.html",
-  "background_color": "[TopColor]",
-  "theme_color": "[TopColor]",
+  "background_color": "[ColorTop]",
+  "theme_color": "[ColorTop]",
   "display": "standalone",
   "orientation": "natural",
   "icons": [
@@ -17,13 +17,6 @@
       "src": "../images/icons/app/icon.png",
       "type": "image/png",
       "sizes": "512x512"
-    }
-  ],
-  "prefer_related_applications": true,
-  "related_applications": [
-    {
-      "platform": "play",
-      "id": "nadav.tasher.handasaim"
     }
   ]
 }

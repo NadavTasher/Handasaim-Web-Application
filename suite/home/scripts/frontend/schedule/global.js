@@ -25,8 +25,8 @@ const SCHEDULE_DAYS = [
 ];
 
 const TRANSIT_DESTINATION = "[TransitDestination]";
-const TOP_COLOR = "[TopColor]";
-const BOTTOM_COLOR = "[BottomColor]";
+const TOP_COLOR = "[ColorTop]";
+const BOTTOM_COLOR = "[ColorBottom]";
 
 const MOOVIT_ENDPOINT = "moovit://directions?";
 const WHATSAPP_ENDPOINT = "whatsapp://send?text=";
