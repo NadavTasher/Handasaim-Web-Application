@@ -24,13 +24,28 @@ function global_enabled_teachers(callback) {
         callback(true);
     } else {
         if (global_has_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)) {
-            api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "verify", {session: global_pull_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)}, (success, result, error) => {
-                callback(success);
-            });
+            global_keyman_verify(callback);
         } else {
             callback(false);
         }
     }
+}
+
+function global_keyman_activate(key) {
+    api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "activate", {key: key}, (success, session, error) => {
+        if (success) {
+            global_push_cookie(GLOBAL_KEYMAN_SESSION_COOKIE, session);
+            popup("Activated! Click here to reload.", 0, "#00AA00DD", () => window.location.reload());
+        } else {
+            popup(error, 4000, "#AA0000DD");
+        }
+    });
+}
+
+function global_keyman_verify(callback) {
+    api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "verify", {session: global_pull_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)}, (success, result, error) => {
+        callback(success);
+    });
 }
 
 function global_has_cookie(name) {
