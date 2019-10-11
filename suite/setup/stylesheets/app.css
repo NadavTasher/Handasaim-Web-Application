@@ -1,0 +1,61 @@
+body {
+    background-color: #ffffff;
+    max-width: 460px;
+}
+
+/* App Style */
+
+[title = ""], [title = true] {
+    font-size: 5vh;
+}
+
+[content = ""], [content = true] {
+    font-size: 3vh;
+}
+
+#setup > div > div[row = ""] > *, #setup > div > div[row = "true"] > * {
+    width: 100%;
+}
+
+/*Icon Setup*/
+
+#setup-icon-examples img {
+    max-height: 10vh;
+    max-width: 10vh;
+    align-self: center;
+}
+
+#setup-icon-examples > div {
+    padding: 1vh;
+    margin: 1vh;
+    width: 100%;
+}
+
+#setup-icon-buttons > * {
+    width: 100%;
+}
+
+/*Color Setup*/
+#setup-colors-buttons > div {
+    padding: 1vh;
+    margin: 1vh;
+    width: 100%;
+}
+
+#setup-colors-buttons input {
+    width: auto;
+}
+
+/*Application Setup*/
+
+#setup-application > div {
+    padding: 1vh;
+    margin: 1vh;
+}
+
+/*Access Setup*/
+
+#setup-access > div {
+    padding: 1vh;
+    margin: 1vh;
+}

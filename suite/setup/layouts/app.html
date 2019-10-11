@@ -1,0 +1,91 @@
+<div id="welcome" column>
+    <p title>Welcome to Schedule Suite!</p>
+    <p content>Hope you had an easy landing - ready to set up some things?</p>
+    <button onclick="page('setup-icon')">I'm ready, let's go!</button>
+</div>
+<div id="setup" column>
+    <div id="setup-icon" column>
+        <p title>First step: Let's choose an icon!</p>
+        <p content>We'll need two icons, one regular and one iOS.</p>
+        <div id="setup-icon-examples" row>
+            <div column input>
+                <img src="images/icons/examples/icon.png" alt="Regular icon"/>
+                <p content>Example</p>
+                <p content>Regular</p>
+            </div>
+            <div column input>
+                <img src="images/icons/examples/icon_apple.png" alt="iOS icon"/>
+                <p content>Example</p>
+                <p content>iOS</p>
+            </div>
+        </div>
+        <div id="setup-icon-buttons" row>
+            <button>Pick Regular</button>
+            <button>Pick iOS</button>
+        </div>
+        <button onclick="page('setup-colors')">Next step</button>
+    </div>
+    <div id="setup-colors" column>
+        <p title>Second step: Let's choose some colors!</p>
+        <p content>We'll need to choose two colors - one for the top part of the background and one for the bottom.</p>
+        <div id="setup-colors-device" column>
+        </div>
+        <div id="setup-colors-buttons" row>
+            <div column input>
+                <p content>Top color</p>
+                <input id="setup-colors-top" type="color" value="#00649C"/>
+            </div>
+            <div column input>
+                <p content>Bottom color</p>
+                <input id="setup-colors-bottom" type="color" value="#00827E"/>
+            </div>
+        </div>
+        <div row>
+            <button onclick="page('setup-icon')">Previous step</button>
+            <button onclick="page('setup-application')">Next step</button>
+        </div>
+    </div>
+    <div id="setup-application" column>
+        <p title>Third step: Let's setup the application!</p>
+        <p content>We'll need to setup some settings for the application before it's ready.</p>
+        <div column input>
+            <p content>Student schedule access:</p>
+            <select id="setup-application-access-students" title="Access">
+                <option value="true">Allowed to all</option>
+                <option value="false">Denied to all</option>
+            </select>
+            <p content>Teacher schedule access:</p>
+            <select id="setup-application-access-teachers" title="Access">
+                <option value="true">Allowed to all</option>
+                <option value="false">Allowed to specific people</option>
+            </select>
+        </div>
+        <div column input>
+            <input id="setup-application-name" type="text" placeholder="App name, e.g. Handasaim"/>
+            <input id="setup-application-short" type="text" placeholder="App short name, e.g. H+"/>
+            <input id="setup-application-description" type="text" placeholder="App description, e.g. The official schedule app for Handasaim"/>
+        </div>
+        <div row>
+            <button onclick="page('setup-colors')">Previous step</button>
+            <button onclick="page('setup-access')">Next step</button>
+        </div>
+    </div>
+    <div id="setup-access" column>
+        <p title>Forth and final step: Let's setup administrative access!</p>
+        <p content>You'll need to enter some passwords to get administrative access to Upload and KeyMan.</p>
+        <div column input>
+            <p content>Upload portal access:</p>
+            <input id="setup-access-upload-user" type="text" placeholder="User Name"/>
+            <input id="setup-access-upload-password" type="password" placeholder="User Password"/>
+        </div>
+        <div column input>
+            <p content>KeyMan portal access:</p>
+            <input id="setup-access-keyman-user" type="text" placeholder="User Name"/>
+            <input id="setup-access-keyman-password" type="password" placeholder="User Password"/>
+        </div>
+        <div row>
+            <button onclick="page('setup-application')">Previous step</button>
+            <button onclick="setup();">Finish!</button>
+        </div>
+    </div>
+</div>
