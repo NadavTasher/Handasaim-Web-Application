@@ -86,7 +86,7 @@ function mobile_teacher_load(schedule, name) {
     if (teacher !== null) {
         if (SCHEDULE_DAY in schedule &&
             SCHEDULE_SUBJECTS in teacher) {
-            mobile_glance(teacher[SCHEDULE_NAME], global_day_to_text(schedule[SCHEDULE_DAY]));
+            mobile_glance(teacher[SCHEDULE_NAME].split(" ")[0], global_day_to_text(schedule[SCHEDULE_DAY]));
             mobile_subjects_load(schedule[SCHEDULE_TIMES], teacher[SCHEDULE_SUBJECTS]);
         }
     }

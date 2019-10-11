@@ -1,4 +1,4 @@
-const GLOBAL_KEYMAN_ENDPOINT = "../keyman/scripts/backend/keyman/keyman,php", GLOBAL_KEYMAN_API = "keyman", GLOBAL_KEYMAN_SESSION_COOKIE = "keyman";
+const GLOBAL_KEYMAN_ENDPOINT = "../keyman/scripts/backend/keyman/keyman.php", GLOBAL_KEYMAN_API = "keyman", GLOBAL_KEYMAN_SESSION_COOKIE = "keyman";
 const GLOBAL_MESSAGE_INTERVAL = 5 * 1000;
 const GLOBAL_COLOR_TOP = "[ColorTop]";
 const GLOBAL_COLOR_BOTTOM = "[ColorBottom]";
@@ -31,9 +31,10 @@ function global_enabled_teachers(callback) {
     }
 }
 
-function global_keyman_activate(key) {
-    api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "activate", {key: key}, (success, session, error) => {
+function global_keyman_activate(keyInput) {
+    api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "activate", {key: keyInput.value}, (success, session, error) => {
         if (success) {
+            keyInput.value = "";
             global_push_cookie(GLOBAL_KEYMAN_SESSION_COOKIE, session);
             popup("Activated! Click here to reload.", 0, "#00AA00DD", () => window.location.reload());
         } else {
