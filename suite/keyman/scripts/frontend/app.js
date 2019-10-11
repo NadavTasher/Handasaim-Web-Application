@@ -1,5 +1,24 @@
+const KEYMAN_ENDPOINT = "scripts/backend/keyman/keyman.php";
+const KEYMAN_API = "keyman";
+
 function load() {
-    // App Load Code
+    view("home");
+    view("inputs");
 }
 
-// App Code
+function submit() {
+    hide("inputs");
+    api(KEYMAN_ENDPOINT, KEYMAN_API, "generate", {amount: parseInt(get("amount").value)}, (success, result, error) => {
+        if (success) {
+            let text = "";
+            for (let i = 0; i > result.length; i++) {
+                if (text.length > 0)
+                    text += "\n";
+                text += result[i];
+            }
+            view("outputs");
+        } else {
+            show("inputs");
+        }
+    }, authenticate());
+}
