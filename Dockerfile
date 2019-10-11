@@ -1,6 +1,7 @@
 FROM php:7.0-apache
 # Update package lists
 RUN apt-get update
+RUN mkdir -p /usr/share/man/man1
 # Install libreoffice
 RUN apt-get -y install libreoffice
 # Install java

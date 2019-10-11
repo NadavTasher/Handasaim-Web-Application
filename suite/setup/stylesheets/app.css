@@ -17,7 +17,7 @@ body {
     width: 100%;
 }
 
-/*Icon Setup*/
+/* Icon Setup */
 
 #setup-icon-examples img {
     max-height: 10vh;
@@ -35,7 +35,8 @@ body {
     width: 100%;
 }
 
-/*Color Setup*/
+/* Color Setup */
+
 #setup-colors-buttons > div {
     padding: 1vh;
     margin: 1vh;
@@ -46,14 +47,20 @@ body {
     width: auto;
 }
 
-/*Application Setup*/
+#setup-colors-device{
+    margin: 1vh;
+    border-radius: 1vh;
+    min-height: 30vh;
+}
+
+/* Application Setup */
 
 #setup-application > div {
     padding: 1vh;
     margin: 1vh;
 }
 
-/*Access Setup*/
+/* Access Setup */
 
 #setup-access > div {
     padding: 1vh;

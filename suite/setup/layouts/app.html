@@ -20,8 +20,8 @@
             </div>
         </div>
         <div id="setup-icon-buttons" row>
-            <button>Pick Regular</button>
-            <button>Pick iOS</button>
+            <button onclick="setup_icon_pick_regular()">Pick Regular</button>
+            <button onclick="setup_icon_pick_ios()">Pick iOS</button>
         </div>
         <button onclick="page('setup-colors')">Next step</button>
     </div>
@@ -33,11 +33,11 @@
         <div id="setup-colors-buttons" row>
             <div column input>
                 <p content>Top color</p>
-                <input id="setup-colors-top" type="color" value="#00649C"/>
+                <input id="setup-colors-top" type="color" value="#00649C" onchange="setup_colors_changed()"/>
             </div>
             <div column input>
                 <p content>Bottom color</p>
-                <input id="setup-colors-bottom" type="color" value="#00827E"/>
+                <input id="setup-colors-bottom" type="color" value="#00827E" onchange="setup_colors_changed()"/>
             </div>
         </div>
         <div row>
