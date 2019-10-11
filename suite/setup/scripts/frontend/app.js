@@ -12,13 +12,13 @@ function setup() {
             get("setup-application-short").value.length > 0 &&
             get("setup-application-description").value.length > 0 &&
             get("setup-application-access-students").value.length > 0 &&
-            get("setup-application-access-teacher").value.length > 0) {
+            get("setup-application-access-teachers").value.length > 0) {
             if (get("setup-access-upload-user").value.length > 0 &&
                 get("setup-access-upload-password").value.length > 0 &&
                 get("setup-access-keyman-user").value.length > 0 &&
                 get("setup-access-keyman-password").value.length > 0) {
-                if (get("setup-access-upload-password").value.length < 8 &&
-                    get("setup-access-keyman-password").value.length < 8) {
+                if (get("setup-access-upload-password").value.length >= 8 &&
+                    get("setup-access-keyman-password").value.length >= 8) {
                     // All ok, send request
                     let form = new FormData();
                     // Add icons
@@ -29,8 +29,8 @@ function setup() {
                         AppName: get("setup-application-name").value,
                         AppShort: get("setup-application-short").value,
                         AppDescription: get("setup-application-description").value,
-                        EnabledStudents: get("setup-application-access-students").value === "true",
-                        EnabledTeachers: get("setup-application-access-teachers").value === "true",
+                        EnabledStudents: get("setup-application-access-students").value,
+                        EnabledTeachers: get("setup-application-access-teachers").value,
                         ColorTop: get("setup-colors-top").value,
                         ColorBottom: get("setup-colors-bottom").value,
                         KeyMan: {
@@ -48,25 +48,25 @@ function setup() {
                         }
                     }, form);
                 } else {
-                    let dismiss = popup("Passwords must be at least 8 characters. Click to inspect.", 4000, "#AA0000DD", () => {
+                    let dismiss = popup("Passwords must be at least 8 characters. Click to inspect.", 4, "#AA0000DD", () => {
                         page("setup-access");
                         dismiss();
                     });
                 }
             } else {
-                let dismiss = popup("Authentication information must not be empty. Click to inspect.", 4000, "#AA0000DD", () => {
+                let dismiss = popup("Authentication information must not be empty. Click to inspect.", 4, "#AA0000DD", () => {
                     page("setup-access");
                     dismiss();
                 });
             }
         } else {
-            let dismiss = popup("Missing information. Click to inspect.", 4000, "#AA0000DD", () => {
+            let dismiss = popup("Missing information. Click to inspect.", 4, "#AA0000DD", () => {
                 page("setup-application");
                 dismiss();
             });
         }
     } else {
-        let dismiss = popup("One or more icons missing. Click to inspect.", 4000, "#AA0000DD", () => {
+        let dismiss = popup("One or more icons missing. Click to inspect.", 4, "#AA0000DD", () => {
             page("setup-icon");
             dismiss();
         });
