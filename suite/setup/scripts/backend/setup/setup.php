@@ -5,7 +5,7 @@
  * https://github.com/NadavTasher/ScheduleSuite/
  **/
 
-include_once __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "base" . DIRECTORY_SEPARATOR . "api.php";
+include_once __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "upload" . DIRECTORY_SEPARATOR . "scripts" . DIRECTORY_SEPARATOR . "backend" . DIRECTORY_SEPARATOR . "authenticate" . DIRECTORY_SEPARATOR . "api.php";
 
 const HOME_PATH = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "home";
 const ICON_REGULAR = HOME_PATH . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR . "icons" . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR . "icon.png";
@@ -20,7 +20,9 @@ api("setup", function ($action, $parameters) {
                 isset($parameters->ColorTop) &&
                 isset($parameters->ColorBottom) &&
                 isset($parameters->EnabledStudents) &&
-                isset($parameters->EnabledTeachers)) {
+                isset($parameters->EnabledTeachers) &&
+                isset($parameters->User) &&
+                isset($parameters->Password)) {
                 // Write the uploaded file to their place
                 move_uploaded_file($_FILES["icon-regular"]["tmp_name"], ICON_REGULAR);
                 move_uploaded_file($_FILES["icon-ios"]["tmp_name"], ICON_IOS);
@@ -32,6 +34,8 @@ api("setup", function ($action, $parameters) {
                 replace_in_path("[ColorBottom]", $parameters->ColorBottom, HOME_PATH);
                 replace_in_path("[EnabledStudents]", $parameters->EnabledStudents, HOME_PATH);
                 replace_in_path("[EnabledTeachers]", $parameters->EnabledTeachers, HOME_PATH);
+                // Register user
+                authenticate_user_add($parameters->User, $parameters->Password);
                 return [true, null];
             }
             return [false, "Missing parameters"];

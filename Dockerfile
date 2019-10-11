@@ -9,6 +9,8 @@ RUN apt-get -y install openjdk-8-jre-headless ca-certificates-java
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 # Copy suite
 COPY suite /var/www/html
+# Link upload and keyman authentication files
+RUN ln -s /var/www/html/upload/files/authenticate /var/www/html/keyman/files/authenticate
 # Change permissions and ownership
 RUN chmod 775 /var/www/ -R
 RUN chown www-data /var/www/ -R

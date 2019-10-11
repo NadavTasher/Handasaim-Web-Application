@@ -13,12 +13,9 @@ function setup() {
             get("setup-application-description").value.length > 0 &&
             get("setup-application-access-students").value.length > 0 &&
             get("setup-application-access-teachers").value.length > 0) {
-            if (get("setup-access-upload-user").value.length > 0 &&
-                get("setup-access-upload-password").value.length > 0 &&
-                get("setup-access-keyman-user").value.length > 0 &&
-                get("setup-access-keyman-password").value.length > 0) {
-                if (get("setup-access-upload-password").value.length >= 8 &&
-                    get("setup-access-keyman-password").value.length >= 8) {
+            if (get("setup-access-user").value.length > 0 &&
+                get("setup-access-password").value.length > 0) {
+                if (get("setup-access-password").value.length >= 8) {
                     // All ok, send request
                     let form = new FormData();
                     // Add icons
@@ -33,14 +30,8 @@ function setup() {
                         EnabledTeachers: get("setup-application-access-teachers").value,
                         ColorTop: get("setup-colors-top").value,
                         ColorBottom: get("setup-colors-bottom").value,
-                        KeyMan: {
-                            name: get("setup-access-keyman-user").value,
-                            password: get("setup-access-keyman-password").value
-                        },
-                        Upload: {
-                            name: get("setup-access-upload-user").value,
-                            password: get("setup-access-upload-password").value
-                        }
+                        User: get("setup-access-user").value,
+                        Password: get("setup-access-password").value
                     };
                     api("scripts/backend/setup/setup.php", "setup", "setup", parameters, (success, result, error) => {
                         if (success) {
