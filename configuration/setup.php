@@ -1,6 +1,6 @@
 <?php
 
-const CONFIGURATION_FILE = __DIR__ . DIRECTORY_SEPARATOR . "suite.json";
+const CONFIGURATION_FILE = __DIR__ . DIRECTORY_SEPARATOR . "configuration.json";
 
 /**
  * This file composes the suite.

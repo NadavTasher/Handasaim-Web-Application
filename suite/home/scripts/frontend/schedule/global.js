@@ -1,7 +1,11 @@
-const MESSAGE_REFRESH_INTERVAL = 5 * 1000;
+const GLOBAL_KEYMAN_ENDPOINT = "../keyman/scripts/backend/keyman/keyman,php", GLOBAL_KEYMAN_API = "keyman", GLOBAL_KEYMAN_SESSION_COOKIE = "keyman";
+const GLOBAL_MESSAGE_INTERVAL = 5 * 1000;
+const GLOBAL_COLOR_TOP = "[ColorTop]";
+const GLOBAL_COLOR_BOTTOM = "[ColorBottom]";
+const GLOBAL_ENABLED_STUDENTS = [EnabledStudents];
+const GLOBAL_ENABLED_TEACHERS = [EnabledTeachers];
 
 const SCHEDULE_LONGEST_DAY = 15;
-
 const SCHEDULE_SUBJECTS = "subjects";
 const SCHEDULE_MESSAGES = "messages";
 const SCHEDULE_TEACHERS = "teachers";
@@ -11,34 +15,22 @@ const SCHEDULE_GRADE = "grade";
 const SCHEDULE_NAME = "name";
 const SCHEDULE_DAY = "day";
 
-const SCHEDULE_FILE = "files/schedule.json";
+function global_enabled_students(callback) {
+    callback(GLOBAL_ENABLED_STUDENTS);
+}
 
-const SCHEDULE_DAYS = [
-    "יום כלשהו",
-    "ראשון",
-    "שני",
-    "שלישי",
-    "רביעי",
-    "חמישי",
-    "שישי",
-    "שבת"
-];
-
-const TRANSIT_DESTINATION = "[TransitDestination]";
-const TOP_COLOR = "[ColorTop]";
-const BOTTOM_COLOR = "[ColorBottom]";
-
-const MOOVIT_ENDPOINT = "moovit://directions?";
-const WHATSAPP_ENDPOINT = "whatsapp://send?text=";
-
-function global_schedule_load(callback) {
-    fetch(SCHEDULE_FILE, {
-        method: "get"
-    }).then(response => {
-        response.text().then((result) => {
-            callback(JSON.parse(result));
-        });
-    });
+function global_enabled_teachers(callback) {
+    if (GLOBAL_ENABLED_TEACHERS) {
+        callback(true);
+    } else {
+        if (global_has_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)) {
+            api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "verify", {session: global_pull_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)}, (success, result, error) => {
+                callback(success);
+            });
+        } else {
+            callback(false);
+        }
+    }
 }
 
 function global_has_cookie(name) {
@@ -91,8 +83,18 @@ function global_minute_to_text(minute) {
 }
 
 function global_day_to_text(day) {
-    if (day < SCHEDULE_DAYS.length)
-        return SCHEDULE_DAYS[day];
+    let days = [
+        "יום כלשהו",
+        "ראשון",
+        "שני",
+        "שלישי",
+        "רביעי",
+        "חמישי",
+        "שישי",
+        "שבת"
+    ];
+    if (day < days.length)
+        return days[day];
 }
 
 function global_times_to_text(schedule, hour) {
@@ -100,6 +102,16 @@ function global_times_to_text(schedule, hour) {
         return global_minute_to_text(schedule[hour]) + " - " + global_minute_to_text(schedule[hour] + 45);
 
     return "";
+}
+
+function global_schedule_load(callback) {
+    fetch("files/schedule.json", {
+        method: "get"
+    }).then(response => {
+        response.text().then((result) => {
+            callback(JSON.parse(result));
+        });
+    });
 }
 
 function global_messages_load(messages, view) {
@@ -112,7 +124,7 @@ function global_messages_load(messages, view) {
             messages.push(message);
         };
         next();
-        setInterval(next, MESSAGE_REFRESH_INTERVAL);
+        setInterval(next, GLOBAL_MESSAGE_INTERVAL);
         show(view);
     } else {
         hide(view);
@@ -120,15 +132,15 @@ function global_messages_load(messages, view) {
 }
 
 function global_background_load() {
-    document.body.style.backgroundImage = "linear-gradient(to bottom," + TOP_COLOR + ", " + BOTTOM_COLOR + ")";
-    document.body.style.backgroundColor = TOP_COLOR;
+    document.body.style.backgroundImage = "linear-gradient(to bottom," + GLOBAL_COLOR_TOP + ", " + GLOBAL_COLOR_BOTTOM + ")";
+    document.body.style.backgroundColor = GLOBAL_COLOR_TOP;
     if ("android" in window && "colors" in window.android) {
-        window.android.colors(TOP_COLOR, BOTTOM_COLOR);
+        window.android.colors(GLOBAL_COLOR_TOP, GLOBAL_COLOR_BOTTOM);
     }
 }
 
-function global_external_callback(endpoint, extra) {
+function global_share_callback(extra) {
     return function () {
-        window.location = endpoint + extra;
+        window.location = "whatsapp://send?text=" + extra;
     };
 }

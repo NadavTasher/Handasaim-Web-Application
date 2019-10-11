@@ -12,7 +12,6 @@
                     <p id="mobile-day"></p>
                 </div>
                 <div row>
-                    <img id="mobile-external-transit" src="resources/svg/icons/buttons/white/transit.svg" alt="Transit"/>
                     <img id="mobile-external-share-grades" src="resources/svg/icons/buttons/white/public_share.svg" alt="Share Grades"/>
                     <img id="mobile-external-share-grade" src="resources/svg/icons/buttons/white/private_share.svg" alt="Share Grade"/>
                     <img src="resources/svg/icons/buttons/white/refresh.svg" alt="Refresh" onclick="window.location.reload(true);"/>
@@ -23,7 +22,15 @@
             </div>
         </div>
         <div id="mobile-content" column>
-            <div id="mobile-names" column></div>
+            <div id="mobile-names" column>
+                <div id="mobile-students" column></div>
+                <div id="mobile-teachers" column>
+                    <div column>
+                        <input id="mobile-teachers-code" placeholder="Teacher Code" type="text"/>
+                        <button>Next</button>
+                    </div>
+                </div>
+            </div>
             <div id="mobile-subjects" column></div>
         </div>
     </div>
