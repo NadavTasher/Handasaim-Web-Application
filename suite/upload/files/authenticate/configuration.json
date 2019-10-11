@@ -2,7 +2,7 @@
   "hooks": {
     "authenticate": true,
     "signin": true,
-    "signup": true
+    "signup": false
   },
   "security": {
     "hash": {

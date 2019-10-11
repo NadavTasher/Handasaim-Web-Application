@@ -26,18 +26,18 @@ function setup() {
                     form.append("icon-ios", iOSIconFile);
                     // Create parameters
                     let parameters = {
-                        appname: get("setup-application-name").value,
-                        appshort: get("setup-application-short").value,
-                        appdescription: get("setup-application-description").value,
-                        enabledstudents: get("setup-application-access-students").value === "true",
-                        enabledteachers: get("setup-application-access-teachers").value === "true",
-                        colortop: get("setup-colors-top").value,
-                        colorbottom: get("setup-colors-bottom").value,
-                        keyman: {
+                        AppName: get("setup-application-name").value,
+                        AppShort: get("setup-application-short").value,
+                        AppDescription: get("setup-application-description").value,
+                        EnabledStudents: get("setup-application-access-students").value === "true",
+                        EnabledTeachers: get("setup-application-access-teachers").value === "true",
+                        ColorTop: get("setup-colors-top").value,
+                        ColorBottom: get("setup-colors-bottom").value,
+                        KeyMan: {
                             name: get("setup-access-keyman-user").value,
                             password: get("setup-access-keyman-password").value
                         },
-                        upload: {
+                        Upload: {
                             name: get("setup-access-upload-user").value,
                             password: get("setup-access-upload-password").value
                         }

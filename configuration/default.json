@@ -1,9 +1,0 @@
-{
-  "AppName": "Handasaim",
-  "AppShort": "H+",
-  "AppDescription": "Schedule app for Handasaim High",
-  "ColorTop": "#00649C",
-  "ColorBottom": "#00827E",
-  "EnabledStudents": true,
-  "EnabledTeachers": false
-}
