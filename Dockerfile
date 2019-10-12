@@ -3,9 +3,9 @@ FROM php:7.0-apache
 RUN apt-get update
 RUN mkdir -p /usr/share/man/man1
 # Install libreoffice
-RUN apt-get -y install libreoffice
+RUN apt-get -y install libreoffice-calc --no-install-recommends --no-install-suggests
 # Install java
-RUN apt-get -y install openjdk-8-jre-headless ca-certificates-java
+RUN apt-get -y install openjdk-8-jre-headless ca-certificates-java --no-install-recommends --no-install-suggests
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 # Copy apache configuration
 COPY configuration/000-default.conf /etc/apache2/sites-available/000-default.conf
