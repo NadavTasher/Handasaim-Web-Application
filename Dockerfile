@@ -8,11 +8,11 @@ RUN apt-get -y install libreoffice
 RUN apt-get -y install openjdk-8-jre-headless ca-certificates-java
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 # Copy apache configuration
+COPY configuration/000-default.conf /etc/apache2/sites-available/000-default.conf
 # Copy suite
-COPY suite /var/www
+COPY suite /var/www/html
 # Link upload and keyman authentication files
-RUN ln -s /var/www/private/upload/files/authenticate /var/www/private/keyman/files/authenticate
-# Link private folders to public folders
+RUN ln -s /var/www/html/upload/files/authenticate /var/www/html/keyman/files/authenticate
 # Change permissions and ownership
 RUN chmod 775 /var/www/ -R
 RUN chown www-data /var/www/ -R

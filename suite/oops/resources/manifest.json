@@ -1,0 +1,22 @@
+{
+  "name": "oops.",
+  "short_name": "oops.",
+  "description": "It looks like the page you tried to reach isn't ready yet.",
+  "start_url": "../index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "natural",
+  "icons": [
+    {
+      "src": "../images/icons/app/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "../images/icons/app/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

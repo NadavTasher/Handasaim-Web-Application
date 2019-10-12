@@ -1,0 +1,17 @@
+/**
+ * Copyright (c) 2019 Nadav Tasher
+ * https://github.com/NadavTasher/ScheduleSuite/
+ **/
+
+body {
+    background-color: #ffffff;
+    max-width: 460px;
+}
+
+#title{
+    font-size: 6vh;
+}
+
+#content{
+    font-size: 4vh;
+}
