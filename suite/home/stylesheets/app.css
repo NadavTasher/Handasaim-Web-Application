@@ -76,14 +76,18 @@ html {
     -webkit-overflow-scrolling: touch;
     justify-content: start;
     overflow-y: scroll;
-    height: 70vh;
-    min-height: 70vh;
-    max-height: 70vh;
+    height: 65vh;
+    min-height: 65vh;
+    max-height: 65vh;
     scroll-behavior: smooth;
 }
 
 #mobile-content > div::-webkit-scrollbar {
     display: none;
+}
+
+#mobile-content > div > * {
+    min-height: fit-content;
 }
 
 /* Desktop Design */
