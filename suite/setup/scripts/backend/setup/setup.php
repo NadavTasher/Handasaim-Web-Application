@@ -76,12 +76,17 @@ function replace_in_file($search, $replacement, $file)
     }
 }
 
-function remove_directory($path)
+function remove_directory($directory)
 {
-    if (is_dir($path)) {
-        foreach (glob($path . DIRECTORY_SEPARATOR . "*") as $p) {
-            remove_directory($p);
-        }
+    if (!file_exists($directory))
+        return true;
+    if (!is_dir($directory))
+        return unlink($directory);
+    foreach (scandir($directory) as $item) {
+        if ($item == '.' || $item == '..')
+            continue;
+        if (!remove_directory($directory . DIRECTORY_SEPARATOR . $item))
+            return false;
     }
-    unlink($path);
+    return !file_exists($directory) || rmdir($directory);
 }
