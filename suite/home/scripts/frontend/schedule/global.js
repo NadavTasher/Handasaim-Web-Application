@@ -26,12 +26,12 @@ function global_enabled_students(callback) {
 
 function global_enabled_teachers(callback) {
     if (GLOBAL_ENABLED_TEACHERS) {
-        callback(true);
+        callback(true, null);
     } else {
         if (global_has_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)) {
             global_keyman_verify(callback);
         } else {
-            callback(false);
+            callback(false, null);
         }
     }
 }
@@ -50,7 +50,7 @@ function global_keyman_activate(keyInput) {
 
 function global_keyman_verify(callback) {
     api(GLOBAL_KEYMAN_ENDPOINT, GLOBAL_KEYMAN_API, "verify", {session: global_pull_cookie(GLOBAL_KEYMAN_SESSION_COOKIE)}, (success, result, error) => {
-        callback(success);
+        callback(success, success ? result : null);
     });
 }
 

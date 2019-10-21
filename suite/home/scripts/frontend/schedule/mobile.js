@@ -28,8 +28,8 @@ function mobile_names_load(schedule) {
     let listTeachers = mobile_get("teachers");
     if (SCHEDULE_GRADES in schedule &&
         SCHEDULE_TEACHERS in schedule) {
-        global_enabled_students((result)=>{
-            if(result){
+        global_enabled_students((result) => {
+            if (result) {
                 clear(listStudents);
                 for (let gradeIndex = 0; gradeIndex < schedule[SCHEDULE_GRADES].length; gradeIndex++) {
                     let grade = make("button", schedule[SCHEDULE_GRADES][gradeIndex][SCHEDULE_NAME]);
@@ -41,16 +41,19 @@ function mobile_names_load(schedule) {
                 }
             }
         });
-        global_enabled_teachers((result)=>{
-            if(result){
+        global_enabled_teachers((result, prefix) => {
+            if (result) {
                 clear(listTeachers);
                 for (let teacherIndex = 0; teacherIndex < schedule[SCHEDULE_TEACHERS].length; teacherIndex++) {
-                    let teacher = make("button", schedule[SCHEDULE_TEACHERS][teacherIndex][SCHEDULE_NAME]);
-                    teacher.style.padding = "2vh";
-                    teacher.addEventListener("click", function () {
-                        mobile_teacher_load(schedule, teacher.innerText);
-                    });
-                    listTeachers.appendChild(teacher);
+                    const name = schedule[SCHEDULE_TEACHERS][teacherIndex][SCHEDULE_NAME];
+                    if (prefix === null || name.startsWith(prefix)) {
+                        let teacher = make("button", name);
+                        teacher.style.padding = "2vh";
+                        teacher.addEventListener("click", function () {
+                            mobile_teacher_load(schedule, name);
+                        });
+                        listTeachers.appendChild(teacher);
+                    }
                 }
             }
         });

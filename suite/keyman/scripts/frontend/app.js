@@ -13,7 +13,10 @@ function load() {
 
 function submit() {
     hide("inputs");
-    api(KEYMAN_ENDPOINT, KEYMAN_API, "generate", {amount: parseInt(get("amount").value)}, (success, result, error) => {
+    api(KEYMAN_ENDPOINT, KEYMAN_API, "generate", {
+        amount: parseInt(get("amount").value),
+        prefix: get("prefix").value
+    }, (success, result, error) => {
         if (success) {
             let text = "";
             for (let i = 0; i < result.length; i++) {

@@ -17,8 +17,8 @@ api(KEYMAN_API, function ($action, $parameters) {
     if ($action === "generate") {
         $user = authenticate();
         if ($user !== null) {
-            if (isset($parameters->amount)) {
-                $keys = keyman_generate(intval($parameters->amount));
+            if (isset($parameters->amount) && isset($parameters->prefix)) {
+                $keys = keyman_generate(intval($parameters->amount), strlen($parameters->prefix) > 0 ? $parameters->prefix : null);
                 return [true, $keys];
             }
             return [false, "Missing parameters"];
@@ -36,7 +36,11 @@ api(KEYMAN_API, function ($action, $parameters) {
             return [false, "Missing parameters"];
         } else if ($action === "verify") {
             if (isset($parameters->session)) {
-                return [keyman_session_valid($parameters->session), null];
+                $valid = keyman_session_valid($parameters->session);
+                if ($valid) {
+                    return [true, keyman_session_prefix($parameters->session)];
+                }
+                return [false, null];
             }
             return [false, "Missing parameters"];
         }
@@ -46,16 +50,17 @@ api(KEYMAN_API, function ($action, $parameters) {
 
 echo json_encode($result);
 
-function keyman_generate($amount = 1)
+function keyman_generate($amount = 1, $prefix = null)
 {
     $database = keyman_keys_load();
     $keys = array();
     for ($k = 0; $k < $amount; $k++) {
         $key = random(8);
+        $object = new stdClass();
+        $object->salt = random(256);
+        $object->prefix = $prefix;
+        $database->{authenticate_hash($key, $object->salt)} = $object;
         array_push($keys, $key);
-        $salt = random(256);
-        $hashed = authenticate_hash($key, $salt);
-        $database->$hashed = $salt;
     }
     keyman_keys_unload($database);
     return $keys;
@@ -64,8 +69,8 @@ function keyman_generate($amount = 1)
 function keyman_key_exists($key)
 {
     $database = keyman_keys_load();
-    foreach ($database as $hash => $salt) {
-        if ($hash === authenticate_hash($key, $salt))
+    foreach ($database as $hash => $object) {
+        if ($hash === authenticate_hash($key, $object->salt))
             return true;
     }
     return false;
@@ -75,23 +80,25 @@ function keyman_key_activate($key)
 {
     if (keyman_key_exists($key)) {
         $database = keyman_keys_load();
-        foreach ($database as $hash => $salt) {
-            if ($hash === authenticate_hash($key, $salt))
+        foreach ($database as $hash => $object) {
+            if ($hash === authenticate_hash($key, $object->salt)) {
                 unset($database->$hash);
+                keyman_keys_unload($database);
+                return keyman_session_generate($object->prefix);
+            }
         }
-        keyman_keys_unload($database);
-        return keyman_session_generate();
     }
     return null;
 }
 
-function keyman_session_generate()
+function keyman_session_generate($prefix)
 {
     $database = keyman_sessions_load();
     $session = random(512);
-    $salt = random(512);
-    $hashed = authenticate_hash($session, $salt);
-    $database->$hashed = $salt;
+    $object = new stdClass();
+    $object->salt = random(512);
+    $object->prefix = $prefix;
+    $database->{authenticate_hash($session, $object->salt)} = $object;
     keyman_sessions_unload($database);
     return $session;
 }
@@ -99,11 +106,21 @@ function keyman_session_generate()
 function keyman_session_valid($session)
 {
     $database = keyman_sessions_load();
-    foreach ($database as $hash => $salt) {
-        if ($hash === authenticate_hash($session, $salt))
+    foreach ($database as $hash => $object) {
+        if ($hash === authenticate_hash($session, $object->salt))
             return true;
     }
     return false;
+}
+
+function keyman_session_prefix($session)
+{
+    $database = keyman_sessions_load();
+    foreach ($database as $hash => $object) {
+        if ($hash === authenticate_hash($session, $object->salt))
+            return $object->prefix;
+    }
+    return null;
 }
 
 function keyman_sessions_load()
