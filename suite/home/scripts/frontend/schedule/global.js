@@ -162,6 +162,6 @@ function global_background_load() {
 
 function global_share_callback(extra) {
     return function () {
-        window.location = "whatsapp://send?text=" + extra;
+        window.location = "whatsapp://send?text=" + encodeURIComponent(extra);
     };
 }
