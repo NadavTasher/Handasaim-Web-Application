@@ -8,7 +8,7 @@ const MOBILE_GRADE_COOKIE = "grade";
 function mobile_load(schedule) {
     mobile_names_load(schedule);
     if (SCHEDULE_MESSAGES in schedule) {
-        global_messages_load(schedule[SCHEDULE_MESSAGES], mobile_get("message"));
+        mobile_messages_load(schedule[SCHEDULE_MESSAGES], mobile_get("message"));
     } else {
         hide(mobile_get("message"));
     }
@@ -21,6 +21,23 @@ function mobile_load(schedule) {
     }
     // Nudge iOS users to install the app
     instruct();
+}
+
+function mobile_messages_load(messages) {
+    // Check for messages in schedule
+    if (messages.length > 0) {
+        // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
+        let next = () => {
+            let message = messages.shift();
+            view.innerText = message;
+            messages.push(message);
+        };
+        next();
+        setInterval(next, GLOBAL_MESSAGE_INTERVAL);
+        show(mobile_get("right"));
+    } else {
+        hide(mobile_get("right"));
+    }
 }
 
 function mobile_names_load(schedule) {

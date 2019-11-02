@@ -135,23 +135,6 @@ function global_schedule_load(callback) {
     });
 }
 
-function global_messages_load(messages, view) {
-    // Check for messages in schedule
-    if (messages.length > 0) {
-        // Sets an interval to switch messages every X(MessageRefreshInterval) seconds
-        let next = () => {
-            let message = messages.shift();
-            view.innerText = message;
-            messages.push(message);
-        };
-        next();
-        setInterval(next, GLOBAL_MESSAGE_INTERVAL);
-        show(view);
-    } else {
-        hide(view);
-    }
-}
-
 function global_background_load() {
     document.body.style.backgroundImage = "linear-gradient(to bottom," + GLOBAL_COLOR_TOP + ", " + GLOBAL_COLOR_BOTTOM + ")";
     document.body.style.backgroundColor = GLOBAL_COLOR_TOP;
