@@ -286,7 +286,7 @@ public class Schedule extends JSONObject {
                             // Create subject
                             JSONObject subject = new JSONObject();
                             subject.put(NAME, ((JSONObject) grade).getString(NAME));
-                            // Insert subject
+                            // Insert subjectה
                             subjects.put(hour, subject);
                             // Put name
                             teacher.put(NAME, name);
