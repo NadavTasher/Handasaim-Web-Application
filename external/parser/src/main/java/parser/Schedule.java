@@ -70,7 +70,7 @@ public class Schedule extends JSONObject {
             put(TEACHERS, parseTeachers(getJSONArray(GRADES)));
             // Add ringing times
             put(TIMES, new int[]{465, 510, 555, 615, 660, 730, 775, 830, 875, 930, 975, 1020, 1065}); // Pre-corona
-            put(TIMES, new int[]{480, 540, 600, 660, 720, 795, 855, 915}); // Coronatime!
+            // put(TIMES, new int[]{480, 540, 600, 660, 720, 795, 855, 915}); // Coronatime!
         }
     }
 

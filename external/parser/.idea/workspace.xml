@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d69e86-e339-4674-b21a-d401efb83368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../suite/upload/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../suite/upload/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +99,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="673" />
-    <option name="height" value="768" />
-  </component>
   <component name="ProjectId" id="1bFedNzavzLgDfFDbVQhZyTyzOu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -179,8 +173,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Run" />
-      <item itemvalue="Gradle.ScheduleSuiteParser [fatJar]" />
       <item itemvalue="Gradle.ScheduleSuiteParser [build]" />
+      <item itemvalue="Gradle.ScheduleSuiteParser [fatJar]" />
     </list>
     <recent_temporary>
       <list>
@@ -212,7 +206,10 @@
       <workItem from="1570633720874" duration="3282000" />
       <workItem from="1570790895287" duration="642000" />
       <workItem from="1588232357487" duration="927000" />
-      <workItem from="1588241374212" duration="432000" />
+      <workItem from="1588241374212" duration="680000" />
+      <workItem from="1588254865556" duration="654000" />
+      <workItem from="1588335352547" duration="1011000" />
+      <workItem from="1588597576234" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="General progress, does not yet compile.">
       <created>1560536375856</created>
@@ -399,22 +396,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Version incremention" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="656" height="173" key="GridCell.Tab.0.bottom" timestamp="1588235364082">
+    <state width="656" height="173" key="GridCell.Tab.0.bottom" timestamp="1588247791193">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="656" height="173" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588235364082" />
-    <state width="656" height="173" key="GridCell.Tab.0.center" timestamp="1588235364082">
+    <state width="656" height="173" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588247791193" />
+    <state width="656" height="173" key="GridCell.Tab.0.center" timestamp="1588247791192">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="656" height="173" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1588235364082" />
-    <state width="656" height="173" key="GridCell.Tab.0.left" timestamp="1588235364081">
+    <state width="656" height="173" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1588247791192" />
+    <state width="656" height="173" key="GridCell.Tab.0.left" timestamp="1588247791191">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="656" height="173" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1588235364081" />
-    <state width="656" height="173" key="GridCell.Tab.0.right" timestamp="1588235364082">
+    <state width="656" height="173" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1588247791191" />
+    <state width="656" height="173" key="GridCell.Tab.0.right" timestamp="1588247791193">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="656" height="173" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588235364082" />
+    <state width="656" height="173" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588247791193" />
+    <state x="67" y="126" width="1222" height="549" key="new project wizard" timestamp="1588247787329">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="67" y="126" width="1222" height="549" key="new project wizard/0.30.1366.738@0.30.1366.738" timestamp="1588247787329" />
   </component>
   <component name="masterDetails">
     <states>
