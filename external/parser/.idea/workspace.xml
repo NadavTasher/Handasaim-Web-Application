@@ -107,6 +107,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/nadav/IdeaProjects/ScheduleSuiteParser/src/main/java/appcore/AppCore.java" />
@@ -396,6 +397,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Version incremention" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="231" y="96" width="893" height="608" key="CommitChangelistDialog2" timestamp="1589640662950">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="231" y="96" width="893" height="608" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1589640662950" />
+    <state x="127" y="91" width="1092" height="623" key="DiffContextDialog" timestamp="1589640672172">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="127" y="91" width="1092" height="623" key="DiffContextDialog/0.30.1366.738@0.30.1366.738" timestamp="1589640672172" />
     <state width="656" height="173" key="GridCell.Tab.0.bottom" timestamp="1588247791193">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -412,6 +421,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state width="656" height="173" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588247791193" />
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1589640674234">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1589640674234" />
     <state x="67" y="126" width="1222" height="549" key="new project wizard" timestamp="1588247787329">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
